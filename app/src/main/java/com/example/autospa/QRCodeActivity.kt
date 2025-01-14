@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import android.Manifest
 import android.util.Log
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.CameraSelector
@@ -30,9 +32,14 @@ import com.google.mlkit.vision.barcode.common.Barcode
 class QRCodeActivity : AppCompatActivity() {
 
     lateinit var barcodeScanner : BarcodeScanner
+    private lateinit var imageVerticalCar: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qr_code)
+    /*
+        imageVerticalCar = findViewById(R.id.img_vertical_car)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.vertical_car_slide_down)
+        imageVerticalCar.startAnimation(animation)*/
 
         // Request camera permissions
         if (allPermissionsGranted()) {
@@ -57,6 +64,7 @@ class QRCodeActivity : AppCompatActivity() {
          */
 
     }
+
 
     private val activityResultLauncher =
         registerForActivityResult(

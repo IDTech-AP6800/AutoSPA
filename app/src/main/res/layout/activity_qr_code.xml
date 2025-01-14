@@ -88,6 +88,7 @@
 
     <!--Animated Car -->
     <ImageView
+        android:id="@+id/img_vertical_car"
         android:layout_width="47dp"
         android:layout_height="112dp"
         android:rotation="90"
