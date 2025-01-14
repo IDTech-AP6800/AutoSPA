@@ -2,8 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="light_purple">#C9B2FF</color>
-    <color name="purple_background">#F2F2FC</color>
-    <color name="purple_text">#5735A5</color>
-    <color name="purple_navbar">#472A89</color>
+    <color name="background">#F2F2FC</color>
+    <color name="primaryPurple">#472A89</color>
+    <color name="secondaryPurple">#5635A5</color>
+    <color name="carPink">#E53F71</color>
+    <color name="sparkleYellow">#FFD12B</color>
 </resources>
