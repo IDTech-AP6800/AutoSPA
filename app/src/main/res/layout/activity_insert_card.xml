@@ -37,13 +37,13 @@
         android:scaleX="-1"
         android:src="@drawable/the_car"
         android:layout_marginBottom="-20dp"
-        app:layout_constraintBottom_toTopOf="@+id/bubbleThree"
-        app:layout_constraintEnd_toEndOf="@+id/bubbleThree"
-        app:layout_constraintStart_toStartOf="@+id/bubbleThree" />
+        app:layout_constraintBottom_toTopOf="@+id/bubble_three"
+        app:layout_constraintEnd_toEndOf="@+id/bubble_three"
+        app:layout_constraintStart_toStartOf="@+id/bubble_three" />
 
     <!--Displayed Text-->
     <ImageView
-        android:id="@+id/bubbleThree"
+        android:id="@+id/bubble_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
