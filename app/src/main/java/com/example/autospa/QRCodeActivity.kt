@@ -9,6 +9,10 @@ import com.example.autospa.R
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import android.Manifest
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
@@ -33,13 +37,15 @@ class QRCodeActivity : AppCompatActivity() {
 
     lateinit var barcodeScanner : BarcodeScanner
     private lateinit var imageVerticalCar: ImageView
+    private lateinit var imageCam: PreviewView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qr_code)
-    /*
+
         imageVerticalCar = findViewById(R.id.img_vertical_car)
-        val animation = AnimationUtils.loadAnimation(this, R.anim.vertical_car_slide_down)
-        imageVerticalCar.startAnimation(animation)*/
+        imageCam = findViewById(R.id.camera_preview)
+        //Start animations
+        startAnimations(imageVerticalCar, imageCam)
 
         // Request camera permissions
         if (allPermissionsGranted()) {
@@ -66,6 +72,8 @@ class QRCodeActivity : AppCompatActivity() {
     }
 
 
+
+    /*Qr Code detection and the yellow box*/
     private val activityResultLauncher =
         registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions())
@@ -146,6 +154,41 @@ class QRCodeActivity : AppCompatActivity() {
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(
             baseContext, it) == PackageManager.PERMISSION_GRANTED
+    }
+
+    /*Car moving vertically animation
+* Uses code from Park Buddy Swipe Animation*/
+    private fun startAnimations(car: ImageView, cam: PreviewView) {
+
+        car.post {
+            val startPos = car.y
+            val endPos = (cam.y + cam.height) - car.height
+            Log.d("Debug", "Start: $startPos, End: $endPos")
+
+
+            // Car Swipe Indication Animations
+            // 0  - 150
+            val moveDown = ObjectAnimator.ofFloat(car, "y", endPos).apply {
+                duration = 3000
+            }
+
+            val moveUp = ObjectAnimator.ofFloat(car, "y", startPos).apply {
+                duration = 3000
+            }
+
+            val rotationTop = ObjectAnimator.ofFloat(car, "rotationX", 0f, 180f)
+            val rotationBottom = ObjectAnimator.ofFloat(car, "rotationX", 180f, 0f)
+
+            val swipeIndicationSet = AnimatorSet().apply {
+                playSequentially(moveDown, rotationTop, moveUp, rotationBottom)
+                addListener(object : AnimatorListenerAdapter() {
+                    override fun onAnimationEnd(animation: Animator) {
+                        start() // Restart the animation loop
+                    }
+                })
+                start()
+            }
+        }
     }
 
     override fun onDestroy() {

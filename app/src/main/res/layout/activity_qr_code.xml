@@ -91,8 +91,8 @@
         android:id="@+id/img_vertical_car"
         android:layout_width="47dp"
         android:layout_height="112dp"
+        android:translationX="-15dp"
         android:rotation="90"
-        android:rotationX="180"
         android:src="@drawable/the_car"
         app:layout_constraintLeft_toRightOf="@id/camera_preview"
         app:layout_constraintTop_toTopOf="@id/camera_preview" />
