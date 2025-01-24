@@ -41,7 +41,7 @@
         android:id="@+id/sparkle_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:translationX="20dp"
+        android:translationX="30dp"
         android:translationY="85dp"
         android:src="@drawable/sparkle_2"
         app:layout_constraintRight_toRightOf="@id/text_title_success"
@@ -52,9 +52,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:translationY="-70dp"
+        android:translationX="5dp"
         android:src="@drawable/sparkle_1"
         app:layout_constraintLeft_toLeftOf="@id/text_title_success"
         app:layout_constraintTop_toBottomOf="@id/text_title_success"/>
+
+    <!--Sparkle Movement
+
+    <View
+        android:id="@+id/shine_1"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_shine"
+        android:rotation="20"
+        app:layout_constraintTop_toTopOf="@id/sparkle_1"
+        app:layout_constraintLeft_toLeftOf="@id/sparkle_1"/>
+
+    <View
+        android:id="@+id/shine_2"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_shine"
+        android:rotation="20"
+        app:layout_constraintTop_toTopOf="@id/sparkle_2"
+        app:layout_constraintBottom_toBottomOf="@id/sparkle_2"
+        app:layout_constraintLeft_toLeftOf="@id/sparkle_2"
+        app:layout_constraintRight_toRightOf="@id/sparkle_2"/>
+
+        -->
+
 
     <!--Navigation Bar-->
     <include
