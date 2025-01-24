@@ -39,7 +39,7 @@ class OptionalAddOnsActivity : AppCompatActivity() {
 
         car.post {
             val startPosition = car.x
-            val carCenterOffset = car.width / 4f
+            val carCenterOffset = car.width / 3f
             val endPosition = nextStep.x - carCenterOffset
 
             Log.d("Debug", "Start: $startPosition, End: $endPosition")
