@@ -1,6 +1,7 @@
 package com.example.autospa
 
 import android.animation.ObjectAnimator
+import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -27,7 +28,14 @@ class OptionalAddOnsActivity : AppCompatActivity() {
 
         continueButton.setOnClickListener {
             val intent = Intent(this, PaymentOptionsActivity::class.java)
-            startActivity(intent);
+
+            // Custom transition
+            val options = ActivityOptions.makeCustomAnimation(
+                this,
+                R.anim.fade_in, // Enter animation
+                R.anim.fade_out // Exit animation
+            )
+            startActivity(intent, options.toBundle())
         }
 
         progressAnimation()
