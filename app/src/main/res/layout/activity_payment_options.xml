@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background -->
+    <include
+        layout="@layout/background_1"/>
+
+    <!-- Horizontal Line -->
+    <View
+        android:id="@+id/options_horizontal_line"
+        android:layout_width="300dp"
+        android:layout_height="1dp"
+        android:background="#5E74CC"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp" />
+
+    <!-- Completed Bubble 1 -->
+    <View
+        android:id="@+id/options_completed_bubble_1"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/completed_bubble"
+        app:layout_constraintTop_toTopOf="@id/options_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/options_horizontal_line"
+        app:layout_constraintStart_toStartOf="@id/options_horizontal_line"
+        android:layout_marginStart="-12dp"/>
+
+    <!-- Completed Bubble 2 / Current Step -->
+    <View
+        android:id="@+id/options_current_step"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/completed_bubble"
+        app:layout_constraintTop_toTopOf="@id/options_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/options_horizontal_line"
+        app:layout_constraintStart_toEndOf="@id/options_completed_bubble_1"
+        app:layout_constraintEnd_toStartOf="@id/options_next_step"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Incomplete Bubble 1 / Next Step -->
+    <View
+        android:id="@+id/options_next_step"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/incomplete_bubble"
+        app:layout_constraintTop_toTopOf="@id/options_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/options_horizontal_line"
+        app:layout_constraintStart_toEndOf="@id/options_current_step"
+        app:layout_constraintEnd_toStartOf="@id/options_incomplete_bubble_2"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Incomplete Bubble 2 -->
+    <View
+        android:id="@+id/options_incomplete_bubble_2"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/incomplete_bubble"
+        app:layout_constraintTop_toTopOf="@id/options_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/options_horizontal_line"
+        app:layout_constraintEnd_toEndOf="@id/options_horizontal_line"
+        android:layout_marginEnd="-12dp"/>
+
+    <!-- Car -->
+    <View
+        android:id="@+id/options_car"
+        android:layout_width="61dp"
+        android:layout_height="40dp"
+        android:background="@drawable/the_car"
+        app:layout_constraintBottom_toTopOf="@id/options_horizontal_line"
+        app:layout_constraintRight_toRightOf="@id/options_current_step"
+        app:layout_constraintLeft_toLeftOf="@id/options_current_step"
+        android:layout_marginBottom="-17dp"/>
+
+    <!-- Payment Options Text -->
+    <TextView
+        android:id="@+id/payment_options_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Options"
+        android:fontFamily="@font/opensans_bold"
+        android:textColor="@color/primaryPurple"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="@id/options_horizontal_line"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="35sp"
+        android:layout_marginLeft="30sp"/>
+
+    <!-- Payment Options -->
+    <GridLayout
+        android:id="@+id/payment_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        app:layout_constraintTop_toBottomOf="@id/payment_options_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="15dp">
+
+        <!-- QR Code -->
+        <LinearLayout
+            android:id="@+id/qr_code_option"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/payment_options_button">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/qr_code"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scan QR Code"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+
+        <!-- Swipe -->
+        <LinearLayout
+            android:id="@+id/swipe_option"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/payment_options_button">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:src="@drawable/swipe"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Swipe"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+
+        <!-- Insert -->
+        <LinearLayout
+            android:id="@+id/insert_option"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/payment_options_button">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:src="@drawable/insert"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Insert"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+
+        <!-- Tap -->
+        <LinearLayout
+            android:id="@+id/tap_option"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/payment_options_button">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/tap"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap"
+                android:fontFamily="@font/opensans_regular"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
+
+    </GridLayout>
+
+    <!-- Amount Due Text -->
+    <TextView
+        android:id="@+id/add_ons_amount_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensans_bold"
+        android:text="Amount Due: $32.00"
+        android:textColor="@color/primaryPurple"
+        android:textSize="30sp"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/payment_options"
+        />
+
+    <!-- Navigation Bar -->
+    <include
+        android:id="@+id/add_ons_nav_bar"
+        layout="@layout/navigation_bar"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
