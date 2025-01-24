@@ -1,10 +1,13 @@
 package com.example.autospa
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
+import com.example.autospa.activities.NavigationBar
 
 class PaymentOptionsActivity : AppCompatActivity() {
     private lateinit var currentStep: View
@@ -14,12 +17,41 @@ class PaymentOptionsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_options)
+        NavigationBar(this)
 
         currentStep = findViewById(R.id.options_current_step)
         nextStep = findViewById(R.id.options_next_step)
         car = findViewById(R.id.options_car)
 
         progressAnimation()
+
+        //Insert Option Listener
+        val insertOption = findViewById<LinearLayout>(R.id.insert_option)
+        insertOption.setOnClickListener {
+            val intent = Intent(this, InsertCardActivity::class.java)
+            startActivity(intent)
+        }
+
+        //Swipe Option Listener
+//        val swipeOption = findViewById<LinearLayout>(R.id.swipe_option)
+//        swipeOption.setOnClickListener {
+//            val intent = Intent(this, SwipeCardActivity::class.java)
+//            startActivity(intent)
+//        }
+
+        //Tap Option Listener
+        val tapOption = findViewById<LinearLayout>(R.id.tap_option)
+        tapOption.setOnClickListener {
+            val intent = Intent(this, TapCardActivity::class.java)
+            startActivity(intent)
+        }
+
+        //QR code Option Listener
+        val qrcodeOption = findViewById<LinearLayout>(R.id.qr_code_option)
+        qrcodeOption.setOnClickListener {
+            val intent = Intent(this, QRCodeActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun progressAnimation() {

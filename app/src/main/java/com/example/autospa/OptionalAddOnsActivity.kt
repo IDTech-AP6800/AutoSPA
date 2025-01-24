@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import com.example.autospa.activities.NavigationBar
 
 class OptionalAddOnsActivity : AppCompatActivity() {
     private lateinit var currentStep: View
@@ -19,6 +20,8 @@ class OptionalAddOnsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_optional_add_ons)
+
+        NavigationBar(this)
 
         currentStep = findViewById(R.id.add_ons_current_step)
         nextStep = findViewById(R.id.add_ons_next_step)
