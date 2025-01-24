@@ -25,6 +25,7 @@ import androidx.camera.view.LifecycleCameraController
 import androidx.camera.view.PreviewView
 //import com.example.autospa.SelectionActivity
 import com.example.autospa.QRCodeViewModel
+import com.example.autospa.activities.NavigationBar
 import com.google.mlkit.vision.barcode.BarcodeScanner
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
@@ -41,6 +42,7 @@ class QRCodeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qr_code)
+        NavigationBar(this)
 
         imageVerticalCar = findViewById(R.id.img_vertical_car)
         imageCam = findViewById(R.id.camera_preview)

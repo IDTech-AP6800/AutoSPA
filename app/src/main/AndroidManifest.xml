@@ -25,6 +25,9 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".WashPackageActivity"
+            android:exported="true">
+        </activity>
         <activity android:name=".QRCodeActivity"
                   android:exported="true">
         </activity>
