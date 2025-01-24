@@ -33,6 +33,14 @@
             android:name=".PaymentSuccessActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".OptionalAddOnsActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".PaymentOptionsActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
