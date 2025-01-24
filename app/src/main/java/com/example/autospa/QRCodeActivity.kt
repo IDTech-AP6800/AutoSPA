@@ -125,10 +125,9 @@ class QRCodeActivity : AppCompatActivity() {
                     //If it has a value, that is it scanner
                     Log.d(TAG, "startCamera:\ncodeValue:$barcodeValue" +
                             "\nbarcodeFormat:$barcodeFormat")
-                    /* TODO: Start next Intent after others finish dev to link
-                    val intent = Intent(this@QRCodeActivity, ProcessingActivity::class.java)
+
+                    val intent = Intent(this@QRCodeActivity, PaymentProcessingActivity::class.java)
                     startActivity(intent)
-                    */
                 }
 
                 val qrCodeViewModel = QRCodeViewModel(barcodeResults[0])
