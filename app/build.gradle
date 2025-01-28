@@ -43,10 +43,16 @@ android {
 }
 
 dependencies {
+
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Added these ones to try to allow MotionLayout w/Carousel
+    implementation "androidx.constraintlayout:constraintlayout:2.2.0"
+    implementation 'androidx.constraintlayout:constraintlayout-core:1.1.0'
+    implementation 'androidx.profileinstaller:profileinstaller:1.4.0'
+
     implementation 'com.google.code.gson:gson:2.11.0'
     implementation 'org.zeromq:jeromq:0.6.0'
     implementation 'androidx.fragment:fragment-ktx:1.5.7'
