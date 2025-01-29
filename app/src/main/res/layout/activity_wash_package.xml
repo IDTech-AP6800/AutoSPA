@@ -8,7 +8,6 @@
     app:layoutDescription="@xml/activity_wash_package_scene">
 
     <!-- Temp Button -->
-
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -18,31 +17,26 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <!--Carousel Views-->
+    <!-- Carousel Images -->
     <ImageView
         android:id="@+id/bronze_tier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/bronze_tier"/>
-    <!--
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" -->
 
     <ImageView
         android:id="@+id/silver_tier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/silver_tier" />
+
     <ImageView
         android:id="@+id/gold_tier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/gold_tier"/>
 
-
-    <!--Actual Carousel-->
+    <!-- Actual Carousel -->
     <androidx.constraintlayout.helper.widget.Carousel
         android:id="@+id/carousel"
         android:layout_width="wrap_content"
@@ -51,9 +45,7 @@
         app:carousel_backwardTransition="@+id/backward"
         app:carousel_previousState="@+id/previous"
         app:carousel_nextState="@+id/next"
-        app:carousel_infinte="true"
+        app:carousel_infinite="true"
         app:carousel_firstView="@+id/silver_tier"
         app:constraint_referenced_ids="bronze_tier, silver_tier, gold_tier"/>
-
-
 </androidx.constraintlayout.motion.widget.MotionLayout>
