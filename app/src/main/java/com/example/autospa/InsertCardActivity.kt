@@ -2,22 +2,42 @@ package com.example.autospa
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.app.ActivityOptions
+import android.content.Intent
 import android.graphics.Path
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.autospa.activities.NavigationBar
 
 class InsertCardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insert_card)
+        NavigationBar(this)
 
         val car = findViewById<ImageView>(R.id.car)
         val bubble = findViewById<ImageView>(R.id.bubble_three)
 
         startCarAnimation(car, bubble)
+
+        // Get the root view of the activity's layout
+        val rootView: View = findViewById(android.R.id.content)
+
+        // Set an OnClickListener to detect taps on the screen
+        rootView.setOnClickListener {
+
+            // Navigate to PaymentProcessingActivity
+            val intent = Intent(this, PaymentProcessingActivity::class.java)
+            val options = ActivityOptions.makeCustomAnimation(
+                this,
+                R.anim.fade_in, // Enter animation
+                R.anim.fade_out // Exit animation
+            )
+            startActivity(intent, options.toBundle())
+        }
     }
 
     private fun startCarAnimation(car: ImageView, bubble: ImageView) {
