@@ -34,8 +34,11 @@ class TapCardActivity : AppCompatActivity() {
 
     private fun animateView(view: View) {
         // Move up and down
-        val moveUp = ObjectAnimator.ofFloat(view, "translationY", -10f).setDuration(1000)
-        val moveDown = ObjectAnimator.ofFloat(view, "translationY", 10f).setDuration(1000)
+        val moveUp = ObjectAnimator.ofFloat(view, "translationY", -30f).setDuration(1000)
+        val moveDown = ObjectAnimator.ofFloat(view, "translationY", 30f).setDuration(1000)
+        moveUp.startDelay = 300
+        moveDown.startDelay = 300
+
         moveUp.repeatMode = ObjectAnimator.REVERSE
         moveDown.repeatMode = ObjectAnimator.REVERSE
         moveUp.repeatCount = ObjectAnimator.INFINITE
@@ -43,8 +46,8 @@ class TapCardActivity : AppCompatActivity() {
 
 
         // Rotate slightly
-        val rotateLeft = ObjectAnimator.ofFloat(view, "rotation", -5f).setDuration(1000)
-        val rotateRight = ObjectAnimator.ofFloat(view, "rotation", 5f).setDuration(1000)
+        val rotateLeft = ObjectAnimator.ofFloat(view, "rotation", -10f).setDuration(1000)
+        val rotateRight = ObjectAnimator.ofFloat(view, "rotation", 10f).setDuration(1000)
         rotateLeft.repeatMode = ObjectAnimator.REVERSE
         rotateRight.repeatMode = ObjectAnimator.REVERSE
         rotateLeft.repeatCount = ObjectAnimator.INFINITE
