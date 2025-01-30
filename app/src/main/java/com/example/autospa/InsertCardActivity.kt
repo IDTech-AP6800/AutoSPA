@@ -46,8 +46,8 @@ class InsertCardActivity : AppCompatActivity() {
             Log.d("Debug", "car.translationX: ${car.translationX}, car.translationY: ${car.translationY}")
             Log.d("Debug", "bubble_three.x: ${bubble.x}, bubble_three.y: ${bubble.y}")
 
-            val bubbleCenterX = bubble.x + (bubble.width / 2)
-            val bubbleCenterY = bubble.y + (bubble.height / 2)
+            val bubbleCenterX = bubble.x + (bubble.width / 4)
+            val bubbleCenterY = bubble.y + (bubble.height / 4)
             val bubbleRadius = bubble.width / 2
 
             // Ensure the car starts at the top of the bubble
@@ -63,7 +63,7 @@ class InsertCardActivity : AppCompatActivity() {
                     bubbleCenterX + bubbleRadius,
                     bubbleCenterY + bubbleRadius,
                     270f,
-                    -90f,
+                    -50f,
                     true
                 )
             }
@@ -76,7 +76,7 @@ class InsertCardActivity : AppCompatActivity() {
             }
 
             // ObjectAnimator for rotation
-            val rotationAnimator = ObjectAnimator.ofFloat(car, View.ROTATION, 0f, -90f).apply {
+            val rotationAnimator = ObjectAnimator.ofFloat(car, View.ROTATION, 0f, -40f).apply {
                 duration = 2000
                 repeatCount = ObjectAnimator.INFINITE
                 repeatMode = ObjectAnimator.REVERSE
