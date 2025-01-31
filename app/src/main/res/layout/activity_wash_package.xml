@@ -1,20 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/motion_layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bubble_background_1">
+    app:layoutDescription="@xml/activity_wash_package_scene">
 
-    <!-- Temp Button -->
+    <!--Background (Hardcoded b/c MotionLayout)-->
+    <ImageView
+        android:id="@+id/background"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/bubble_background_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+         />
 
-    <Button
-        android:id="@+id/button"
+    <!--Guidelines -->
+    <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/bottom_guideline"
+        app:layout_constraintGuide_end="67dp"
+        android:orientation="horizontal"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/top_guideline"
+        app:layout_constraintGuide_begin="60dp"
+        android:orientation="horizontal"
+        />
+
+    <!-- Horizontal Line -->
+    <View
+        android:id="@+id/add_ons_horizontal_line"
+        android:layout_width="300dp"
+        android:layout_height="1dp"
+        android:background="#5E74CC"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp" />
+
+    <!-- Completed Bubble / Current Step -->
+    <View
+        android:id="@+id/add_ons_current_step"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/completed_bubble"
+        app:layout_constraintTop_toTopOf="@id/add_ons_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/add_ons_horizontal_line"
+        app:layout_constraintStart_toStartOf="@id/add_ons_horizontal_line"
+        android:alpha="0"
+        android:layout_marginStart="-12dp"/>
+
+    <!-- Incomplete Bubble 1 / Next Step -->
+    <View
+        android:id="@+id/add_ons_next_step"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/incomplete_bubble"
+        app:layout_constraintTop_toTopOf="@id/add_ons_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/add_ons_horizontal_line"
+        app:layout_constraintStart_toEndOf="@id/add_ons_current_step"
+        app:layout_constraintEnd_toStartOf="@id/add_ons_incomplete_bubble_2"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Incomplete Bubble 2 -->
+    <View
+        android:id="@+id/add_ons_incomplete_bubble_2"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/incomplete_bubble"
+        app:layout_constraintTop_toTopOf="@id/add_ons_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/add_ons_horizontal_line"
+        app:layout_constraintStart_toEndOf="@id/add_ons_next_step"
+        app:layout_constraintEnd_toStartOf="@id/add_ons_incomplete_bubble_3"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Incomplete Bubble 3 -->
+    <View
+        android:id="@+id/add_ons_incomplete_bubble_3"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/incomplete_bubble"
+        app:layout_constraintTop_toTopOf="@id/add_ons_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/add_ons_horizontal_line"
+        app:layout_constraintEnd_toEndOf="@id/add_ons_horizontal_line"
+        android:layout_marginEnd="-12dp"/>
+
+    <!-- Car -->
+    <View
+        android:id="@+id/add_ons_car"
+        android:layout_width="61dp"
+        android:layout_height="40dp"
+        android:background="@drawable/the_car"
+        app:layout_constraintBottom_toTopOf="@id/add_ons_horizontal_line"
+        app:layout_constraintRight_toRightOf="@id/add_ons_current_step"
+        app:layout_constraintLeft_toLeftOf="@id/add_ons_current_step"
+        android:layout_marginBottom="-17dp"
+        android:layout_marginLeft="10dp"/>
+
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="30dp"
+        android:text="Pick a wash package"
+        android:textSize="32sp"
+        android:textColor="@color/primaryPurple"
+        android:fontFamily="@font/opensans_bold"
+        app:layout_constraintTop_toTopOf="@id/top_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <!-- Carousel Images (4/5 of OG size) -->
+    <ImageView
+        android:id="@+id/bronze_tier"
+        android:layout_width="256dp"
+        android:layout_height="320dp"
+        android:src="@drawable/bronze_tier"/>
+
+    <ImageView
+        android:id="@+id/silver_tier"
+        android:layout_width="256dp"
+        android:layout_height="320dp"
+        android:src="@drawable/silver_tier" />
+
+    <ImageView
+        android:id="@+id/gold_tier"
+        android:layout_width="256dp"
+        android:layout_height="320dp"
+        android:src="@drawable/gold_tier"
+        />
+
+    <ImageView
+        android:id="@+id/plat_tier"
+        android:layout_width="256dp"
+        android:layout_height="320dp"
+        android:src="@drawable/platinum_tier"/>
+
+
+
+
+    <!-- Continue Button -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:text="Continue"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:fontFamily="@font/inter_bold"
+        android:background="@drawable/continue_button_1"
+        app:layout_constraintBottom_toTopOf="@id/nav_bar"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="40dp"/>
+
+    <!-- Navigation Bar -->
+    <include
+        android:id="@+id/nav_bar"
+        layout="@layout/navigation_bar" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

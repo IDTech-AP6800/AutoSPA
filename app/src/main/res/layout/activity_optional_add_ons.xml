@@ -218,7 +218,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/opensans_bold"
-        android:text="Amount Due: $32.00"
+        android:text="Amount Due: $18.00"
         android:textColor="@color/primaryPurple"
         android:textSize="30sp"
         android:layout_marginTop="30dp"
