@@ -50,10 +50,16 @@
         <activity
             android:name=".InsertCardActivity"
             android:exported="true">
-      </activity>
-          <activity
+        </activity>
+        <activity
             android:name=".TapCardActivity"
             android:exported="false">
+        </activity>
+        <activity android:name=".ReceiptOptionsActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".QRCodeReceiptActivity"
+            android:exported="true">
         </activity>
     </application>
 
