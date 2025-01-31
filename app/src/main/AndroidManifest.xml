@@ -61,6 +61,9 @@
         <activity android:name=".QRCodeReceiptActivity"
             android:exported="true">
         </activity>
+        <activity android:name=".EmailReceiptActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

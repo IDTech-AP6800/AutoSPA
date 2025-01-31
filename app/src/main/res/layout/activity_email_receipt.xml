@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Background-->
+    <include
+        layout="@layout/background_1"/>
+    
+    <!--Please Enter Text-->
+    <TextView
+        android:id="@+id/email_receipt_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter\nemail below to\nreceive receipt"
+        android:fontFamily="@font/opensans_bold"
+        android:textColor="@color/primaryPurple"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="100dp"
+        android:gravity="center"/>
+
+    <!--Enter Email Text-->
+    <TextView
+        android:id="@+id/enter_email_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter email address"
+        android:fontFamily="@font/opensans_bold"
+        android:textColor="@color/primaryPurple"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/email_receipt_text"
+        app:layout_constraintLeft_toLeftOf="@id/email_address_text_box"
+        android:layout_marginTop="40dp"/>
+
+    <!-- Email Address Text Box -->
+    <EditText
+        android:id="@+id/email_address_text_box"
+        android:layout_width="385dp"
+        android:layout_height="63dp"
+        android:background="@drawable/text_box"
+        android:fontFamily="@font/opensans_medium"
+        android:inputType="textEmailAddress"
+        android:letterSpacing=".5"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/enter_email_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <Button
+        android:id="@+id/add_ons_continue"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/continue_button_1"
+        android:text="Continue"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:fontFamily="@font/inter_bold"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/email_address_text_box"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="40dp"
+        />
+
+    <!--Navigation Bar-->
+    <include
+        layout="@layout/navigation_bar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
