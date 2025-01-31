@@ -1,5 +1,6 @@
 package com.example.autospa
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -16,14 +17,13 @@ class WashPackageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_wash_package)
 
         val button = findViewById<Button>(R.id.button)
-        //var invisBubble = findViewById<View>(R.id.add_ons_current_step)
-        //invisBubble
         var currPackage = 18
 
         button.setOnClickListener {
             CarWashSession.totalDue = currPackage.toDouble()
             val intent = Intent(this@WashPackageActivity, OptionalAddOnsActivity::class.java)
-            startActivity(intent)
+            val options = ActivityOptions.makeCustomAnimation(this, R.anim.fade_in, R.anim.fade_out)
+            startActivity(intent, options.toBundle())
         }
 
 

@@ -41,6 +41,8 @@ class QRCodeActivity : AppCompatActivity() {
     lateinit var barcodeScanner : BarcodeScanner
     private lateinit var imageVerticalCar: ImageView
     private lateinit var imageCam: PreviewView
+    private var totalDue = CarWashSession.totalDue
+    private lateinit var amountText: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qr_code)
@@ -60,19 +62,8 @@ class QRCodeActivity : AppCompatActivity() {
             requestPermissions()
         }
 
-        /*TODO: Add navigation bar and access money from User's purchase selections
-        // Initialize the NavigationBar class to handle the navigation bar functionality
-        NavigationBar(this)
-
-        // Retrieve the total due amount from the "Selection" singleton class
-        val totalDue = SelectionActivity.totalDue
-
-        // Find the TextView responsible for displaying the total due amount in the layout
-        val totalDueTextView = findViewById<TextView>(R.id.totalDue)
-
-        // Set the text of the TextView to display the total due amount
-        totalDueTextView.text = "Total due: $$totalDue"
-         */
+        amountText = findViewById(R.id.text_amountDue)
+        amountText.text = "Amount Due: $" + String.format("%.2f", totalDue)
 
     }
 

@@ -240,7 +240,7 @@
         app:layout_constraintBottom_toTopOf="@id/add_ons_nav_bar"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         />
 
     <!-- Navigation Bar -->
