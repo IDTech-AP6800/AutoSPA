@@ -7,12 +7,15 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.TextView
 import com.example.autospa.activities.NavigationBar
 
 class PaymentOptionsActivity : AppCompatActivity() {
     private lateinit var currentStep: View
     private lateinit var nextStep: View
     private lateinit var car: View
+    private var totalDue = CarWashSession.totalDue
+    private lateinit var amountText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +27,9 @@ class PaymentOptionsActivity : AppCompatActivity() {
         car = findViewById(R.id.options_car)
 
         progressAnimation()
+
+        amountText = findViewById(R.id.payment_options_amount_text)
+        amountText.text = "Amount Due: $" + String.format("%.2f", totalDue)
 
         //Insert Option Listener
         val insertOption = findViewById<LinearLayout>(R.id.insert_option)
