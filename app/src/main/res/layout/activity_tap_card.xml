@@ -5,86 +5,107 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TapCardActivity">
-    <!--Background-->
 
+    <!--Layout: Background-->
     <include
-        layout="@layout/background_1"
-        tools:layout_editor_absoluteX="-87dp"
-        tools:layout_editor_absoluteY="-76dp" />
-    <!--  Bubble  -->
-    <ImageView
-        android:id="@+id/bubble_three"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="132dp"
-        android:src="@drawable/blue_bubble_3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_amountDue"
-        app:layout_constraintVertical_bias="0.0" />
+        layout="@layout/background_1" />
 
-    <!--  The Car  -->
+    <!--Image: Car-->
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/car"
+        app:srcCompat="@drawable/the_car"
+        android:scaleX="-1"
+        android:rotation="20"
         android:layout_width="92dp"
         android:layout_height="89dp"
-        app:srcCompat="@drawable/the_car"
-        app:layout_constraintBottom_toBottomOf="@id/bubble_three"
-        app:layout_constraintTop_toTopOf="@id/bubble_three"
-        app:layout_constraintStart_toStartOf="@id/bubble_three"
-        app:layout_constraintEnd_toEndOf="@id/bubble_three" />
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@id/bubble_3"
+        app:layout_constraintStart_toStartOf="@id/bubble_3"
+        app:layout_constraintTop_toTopOf="@id/bubble_3" />
 
-    <!--  Text: Tap Card  -->
+    <!--Image: Bubble 3-->
+
+    <!--Image: Bubble 2-->
+    <ImageView
+        android:id="@+id/bubble_3"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="136dp"
+        android:alpha="0.8"
+        android:src="@drawable/blue_bubble_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/bubble_2"
+        android:src="@drawable/blue_bubble_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/text_amountDue"
+        app:layout_constraintTop_toBottomOf="@id/text_desc_scan"
+        app:layout_constraintTop_toTopOf="@+id/text_amountDue"
+        app:layout_constraintRight_toLeftOf="@+id/text_amountDue" />
+
+    <!--Image: Bubble 1-->
+    <ImageView
+        android:id="@+id/bubble_1"
+        android:src="@drawable/blue_bubble_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/text_title_scan"
+        app:layout_constraintLeft_toRightOf="@+id/text_title_scan"
+        app:layout_constraintTop_toBottomOf="@id/text_title_scan"
+        app:layout_constraintTop_toTopOf="@+id/text_title_scan" />
+
+    <!--Text: Tap Card-->
+
+    <!--Text: Tap instruction-->
     <TextView
         android:id="@+id/text_title_scan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="84dp"
+        android:fontFamily="@font/opensans_bold"
         android:text="Tap your card on \n screen to pay"
         android:textAlignment="center"
         android:textColor="@color/primaryPurple"
         android:textSize="32sp"
-        android:fontFamily="@font/opensans_bold"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/text_desc_scan"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!--  Text: Conformation Instruction  -->
     <TextView
         android:id="@+id/text_desc_scan"
+        android:text="Hold your card close to the reader until you see a confirmation."
+        android:textSize="16sp"
+        android:fontFamily="@font/opensans_semibolditalic"
+        android:textAlignment="center"
+        android:textColor="@color/primaryPurple"
         android:layout_width="286dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text="Hold your card close to the reader until you see a confirmation."
-        android:textColor="@color/primaryPurple"
-        android:textSize="16sp"
-        android:textAlignment="center"
-        android:fontFamily="@font/opensans_semibolditalic"
+        android:layout_marginTop="28dp"
         app:layout_constraintLeft_toLeftOf="@id/text_title_scan"
         app:layout_constraintRight_toRightOf="@id/text_title_scan"
-        app:layout_constraintTop_toBottomOf="@id/text_title_scan"
-        app:layout_constraintBottom_toTopOf="@id/text_amountDue"/>
+        app:layout_constraintTop_toBottomOf="@id/text_title_scan" />
 
-    <!--  Amount Due  -->
+    <!--Text: AMount Due-->
+
+    <!--Layout: Navigation Bar-->
     <TextView
         android:id="@+id/text_amountDue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="28dp"
+        android:fontFamily="@font/opensans_bold"
         android:text="Amount Due: $"
         android:textColor="@color/primaryPurple"
         android:textSize="32sp"
-        android:fontFamily="@font/opensans_bold"
-        app:layout_constraintBottom_toTopOf="@id/navigation_bar"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintLeft_toLeftOf="@id/text_desc_scan"
         app:layout_constraintRight_toRightOf="@id/text_desc_scan"
         app:layout_constraintTop_toBottomOf="@id/text_desc_scan" />
 
-    <!--Navigation Bar-->
-    <include layout="@layout/navigation_bar"/>
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/navigation_bar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
