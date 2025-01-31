@@ -59,7 +59,7 @@
 
         <!--Continue Button-->
         <Button
-            android:id="@+id/add_ons_continue"
+            android:id="@+id/qr_receipt_continue"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:background="@drawable/continue_button_1"
