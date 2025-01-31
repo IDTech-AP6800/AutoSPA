@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsertCardActivity">
+
+    <!--Background-->
+    <include
+        layout="@layout/background_1"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="92dp"
+        android:src="@drawable/blue_bubble_1"
+        app:layout_constraintBottom_toTopOf="@id/text_title_scan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/text_title_scan" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/blue_bubble_2"
+        app:layout_constraintBottom_toBottomOf="@+id/text_amountDue"
+        app:layout_constraintRight_toLeftOf="@id/parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/parent" />
+
+    <ImageView
+        android:layout_width="101dp"
+        android:layout_height="64dp"
+        android:scaleX="-1"
+        android:src="@drawable/the_car"
+        android:layout_marginBottom="-20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bubble_three"
+        app:layout_constraintEnd_toEndOf="@+id/bubble_three"
+        app:layout_constraintStart_toStartOf="@+id/bubble_three" />
+
+    <!--Displayed Text-->
+    <ImageView
+        android:id="@+id/bubble_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="52dp"
+        android:src="@drawable/blue_bubble_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_amountDue"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <TextView
+        android:id="@+id/text_title_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Insert Your Card to \nProceed"
+        android:textAlignment="center"
+        android:textColor="@color/primaryPurple"
+        android:textSize="32sp"
+        android:fontFamily="@font/opensans_bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/text_desc_scan"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/text_desc_scan"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="Hold your card steady until you see a confirmation"
+        android:textColor="@color/primaryPurple"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:fontFamily="@font/opensans_semibolditalic"
+        app:layout_constraintLeft_toLeftOf="@id/text_title_scan"
+        app:layout_constraintRight_toRightOf="@id/text_title_scan"
+        app:layout_constraintTop_toBottomOf="@id/text_title_scan"
+        app:layout_constraintBottom_toTopOf="@id/text_amountDue"/>
+
+    <TextView
+        android:id="@+id/text_amountDue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Amount Due: $"
+        android:textColor="@color/primaryPurple"
+        android:textSize="32sp"
+        android:fontFamily="@font/opensans_bold"
+        app:layout_constraintBottom_toTopOf="@id/navigation_bar"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintLeft_toLeftOf="@id/text_desc_scan"
+        app:layout_constraintRight_toRightOf="@id/text_desc_scan"
+        app:layout_constraintTop_toBottomOf="@id/text_desc_scan" />
+
+    <!--Navigation Bar-->
+    <include
+        layout="@layout/navigation_bar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

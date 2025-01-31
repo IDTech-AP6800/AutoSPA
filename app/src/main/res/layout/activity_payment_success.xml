@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Background-->
+    <include
+        layout="@layout/background_1"/>
+
+    <!-- Horizontal Line -->
+    <View
+        android:id="@+id/success_horizontal_line"
+        android:layout_width="300dp"
+        android:layout_height="1dp"
+        android:background="#5E74CC"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp" />
+
+    <!-- Completed Bubble 1 -->
+    <View
+        android:id="@+id/success_completed_bubble_1"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/completed_bubble"
+        app:layout_constraintTop_toTopOf="@id/success_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/success_horizontal_line"
+        app:layout_constraintStart_toStartOf="@id/success_horizontal_line"
+        android:layout_marginStart="-12dp"/>
+
+    <!-- Completed Bubble 2  -->
+    <View
+        android:id="@+id/success_completed_bubble_2"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/completed_bubble"
+        app:layout_constraintTop_toTopOf="@id/success_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/success_horizontal_line"
+        app:layout_constraintStart_toEndOf="@id/success_completed_bubble_1"
+        app:layout_constraintEnd_toStartOf="@id/success_current_step"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Completed Bubble 3 / Current Step -->
+    <View
+        android:id="@+id/success_current_step"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/completed_bubble"
+        app:layout_constraintTop_toTopOf="@id/success_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/success_horizontal_line"
+        app:layout_constraintStart_toEndOf="@id/success_completed_bubble_2"
+        app:layout_constraintEnd_toStartOf="@id/success_next_step"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Incomplete Bubble -->
+    <View
+        android:id="@+id/success_next_step"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:background="@drawable/incomplete_bubble"
+        app:layout_constraintTop_toTopOf="@id/success_horizontal_line"
+        app:layout_constraintBottom_toBottomOf="@id/success_horizontal_line"
+        app:layout_constraintEnd_toEndOf="@id/success_horizontal_line"
+        android:layout_marginEnd="-12dp"/>
+
+    <!-- Car -->
+    <View
+        android:id="@+id/success_car"
+        android:layout_width="61dp"
+        android:layout_height="40dp"
+        android:background="@drawable/the_car"
+        app:layout_constraintBottom_toTopOf="@id/success_horizontal_line"
+        app:layout_constraintRight_toRightOf="@id/success_current_step"
+        app:layout_constraintLeft_toLeftOf="@id/success_current_step"
+        android:layout_marginBottom="-17dp"/>
+
+    <!--Text-->
+    <TextView
+        android:id="@+id/text_title_success"
+        android:layout_width="407dp"
+        android:layout_height="wrap_content"
+        android:text="Payment Successful
+        Let's get washing"
+        android:textColor="@color/primaryPurple"
+        android:textSize="32sp"
+        android:fontFamily="@font/opensans_bold"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="90dp" />
+
+    <!--Sparkles-->
+    <ImageView
+        android:id="@+id/sparkle_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationY="75dp"
+        android:src="@drawable/sparkle_2"
+        app:layout_constraintLeft_toRightOf="@id/guideline"
+        app:layout_constraintBottom_toTopOf="@id/text_title_success"/>
+
+    <ImageView
+        android:id="@+id/sparkle_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationY="-70dp"
+        android:src="@drawable/sparkle_1"
+        app:layout_constraintLeft_toLeftOf="@id/text_title_success"
+        app:layout_constraintTop_toBottomOf="@id/text_title_success"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
