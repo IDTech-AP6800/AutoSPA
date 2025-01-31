@@ -56,6 +56,11 @@
             android:name=".TapCardActivity"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".Instructions"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>
