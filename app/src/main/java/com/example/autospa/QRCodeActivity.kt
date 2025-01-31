@@ -23,6 +23,7 @@ import androidx.camera.core.ImageAnalysis.COORDINATE_SYSTEM_VIEW_REFERENCED
 import androidx.camera.mlkit.vision.MlKitAnalyzer
 import androidx.camera.view.LifecycleCameraController
 import androidx.camera.view.PreviewView
+import androidx.constraintlayout.motion.widget.MotionLayout
 //import com.example.autospa.SelectionActivity
 import com.example.autospa.QRCodeViewModel
 import com.example.autospa.activities.NavigationBar
@@ -30,6 +31,7 @@ import com.google.mlkit.vision.barcode.BarcodeScanner
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.barcode.common.Barcode
+
 
 
 /* This code is essentially the same as the one we used for Parking Buddy
@@ -48,6 +50,7 @@ class QRCodeActivity : AppCompatActivity() {
         imageCam = findViewById(R.id.camera_preview)
         //Start animations
         startAnimations(imageVerticalCar, imageCam)
+
 
         // Request camera permissions
         if (allPermissionsGranted()) {

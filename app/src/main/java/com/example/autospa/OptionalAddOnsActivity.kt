@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import com.example.autospa.activities.NavigationBar
 
 class OptionalAddOnsActivity : AppCompatActivity() {
@@ -22,6 +23,11 @@ class OptionalAddOnsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_optional_add_ons)
 
         NavigationBar(this)
+
+        // Sets starting price from WashPackage
+        var add_on_text = findViewById<TextView>(R.id.add_ons_amount_text)
+        var totalDue = CarWashSession.totalDue
+        add_on_text.setText("$" + String.format("%.2f", totalDue))
 
         currentStep = findViewById(R.id.add_ons_current_step)
         nextStep = findViewById(R.id.add_ons_next_step)

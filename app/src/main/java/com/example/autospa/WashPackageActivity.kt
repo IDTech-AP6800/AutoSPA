@@ -2,43 +2,77 @@ package com.example.autospa
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.helper.widget.Carousel
+import androidx.constraintlayout.motion.widget.MotionLayout
 
 class WashPackageActivity : AppCompatActivity() {
 
-    lateinit var carousel: Carousel
-    private val washPackages = listOf(R.drawable.bronze_tier, R.drawable.silver_tier, R.drawable.gold_tier)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wash_package)
 
         val button = findViewById<Button>(R.id.button)
-        carousel = findViewById(R.id.carousel) // Use class-level variable
+        //var invisBubble = findViewById<View>(R.id.add_ons_current_step)
+        //invisBubble
+        var currPackage = 18
 
         button.setOnClickListener {
+            CarWashSession.totalDue = currPackage.toDouble()
             val intent = Intent(this@WashPackageActivity, OptionalAddOnsActivity::class.java)
             startActivity(intent)
         }
 
-        // Properly setting up the carousel
-        carousel.setAdapter(object : Carousel.Adapter {
-            override fun count(): Int {
-                return washPackages.size // Now returns the correct count
+
+        //Save Current Page
+        // TODO: This is a very laggy work around, so we need to find a better way to implement
+        var motionLayout = findViewById<MotionLayout>(R.id.motion_layout)
+        motionLayout.addTransitionListener(object: MotionLayout.TransitionListener{
+            override fun onTransitionStarted(
+                motionLayout: MotionLayout?,
+                startId: Int,
+                endId: Int
+            ) {
             }
 
-            override fun populate(view: View, index: Int) {
-                if (index < washPackages.size) {
-                    view.setBackgroundResource(washPackages[index]) // Set the image dynamically
+            override fun onTransitionChange(
+                motionLayout: MotionLayout?,
+                startId: Int,
+                endId: Int,
+                progress: Float
+            ) {
+            }
+
+            override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
+                if(currentId == R.id.previous){
+                    currPackage = 12
+                    Log.d("WASH", "12")
                 }
+                else if(currentId == R.id.next){
+                    currPackage = 25
+                    Log.d("WASH", "25")
+                }
+                else if(currentId == R.id.next_plat){
+                    currPackage = 32
+                    Log.d("WASH", "32")
+                }
+                else{
+                    currPackage = 18
+                    Log.d("WASH", "18")}
             }
 
-            override fun onNewItem(index: Int) {
-                // Can be used to update UI on item switch
+            override fun onTransitionTrigger(
+                motionLayout: MotionLayout?,
+                triggerId: Int,
+                positive: Boolean,
+                progress: Float
+            ) {
             }
         })
+
     }
+
 }
