@@ -7,4 +7,5 @@
     <color name="secondaryPurple">#5635A5</color>
     <color name="carPink">#E53F71</color>
     <color name="sparkleYellow">#FFD12B</color>
+    <color name="error">#FFD878</color>
 </resources>
