@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
+import com.example.autospa.activities.NavigationBar
 
 class WashPackageActivity : AppCompatActivity() {
 
@@ -15,6 +16,8 @@ class WashPackageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wash_package)
+
+        NavigationBar(this)
 
         val button = findViewById<Button>(R.id.button)
         var currPackage = 18

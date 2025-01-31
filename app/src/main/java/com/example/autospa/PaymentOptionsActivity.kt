@@ -39,11 +39,11 @@ class PaymentOptionsActivity : AppCompatActivity() {
         }
 
         //Swipe Option Listener
-//        val swipeOption = findViewById<LinearLayout>(R.id.swipe_option)
-//        swipeOption.setOnClickListener {
-//            val intent = Intent(this, SwipeCardActivity::class.java)
-//            startActivity(intent)
-//        }
+        val swipeOption = findViewById<LinearLayout>(R.id.swipe_option)
+        swipeOption.setOnClickListener {
+            val intent = Intent(this, SwipeCardActivity::class.java)
+            startActivity(intent)
+        }
 
         //Tap Option Listener
         val tapOption = findViewById<LinearLayout>(R.id.tap_option)
