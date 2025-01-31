@@ -4,7 +4,10 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
@@ -34,6 +37,12 @@ class PaymentSuccessActivity: AppCompatActivity() {
         car = findViewById(R.id.success_car)
 
         progressAnimation()
+
+        // Delay for 3 seconds and then go to Receipt Options
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, ReceiptOptionsActivity::class.java)
+            startActivity(intent)
+        }, 3000)
 
     }
 
