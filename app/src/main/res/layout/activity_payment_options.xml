@@ -204,7 +204,7 @@
 
     <!-- Amount Due Text -->
     <TextView
-        android:id="@+id/add_ons_amount_text"
+        android:id="@+id/payment_options_amount_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/opensans_bold"

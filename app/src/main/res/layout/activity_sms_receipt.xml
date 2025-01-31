@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Background-->
+    <include
+        layout="@layout/background_1"/>
+
+    <!--Please Enter Phone Text-->
+    <TextView
+        android:id="@+id/sms_receipt_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter\nphone number below to\nreceive receipt"
+        android:fontFamily="@font/opensans_bold"
+        android:textColor="@color/primaryPurple"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="100dp"
+        android:gravity="center"/>
+
+    <!--Enter Phone Number Text-->
+    <TextView
+        android:id="@+id/enter_phone_number_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter phone number"
+        android:fontFamily="@font/opensans_bold"
+        android:textColor="@color/primaryPurple"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/sms_receipt_text"
+        app:layout_constraintLeft_toLeftOf="@id/phone_number_text_box"
+        android:layout_marginTop="40dp"/>
+
+    <!-- Phone Number Text Box -->
+    <EditText
+        android:id="@+id/phone_number_text_box"
+        android:layout_width="385dp"
+        android:layout_height="63dp"
+        android:background="@drawable/text_box"
+        android:fontFamily="@font/opensans_medium"
+        android:inputType="phone"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textColor="@color/primaryPurple"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/enter_phone_number_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!--Message Rate Text-->
+    <TextView
+        android:id="@+id/message_rates_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="* Message and data rates may apply"
+        android:fontFamily="@font/opensans_medium"
+        android:textColor="@color/primaryPurple"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/phone_number_text_box"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!--Error Message-->
+    <TextView
+        android:id="@+id/phone_error_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:fontFamily="@font/opensans_bold"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/error"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--Continue Button-->
+    <Button
+        android:id="@+id/sms_receipt_continue"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/continue_button_1"
+        android:text="Continue"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:fontFamily="@font/inter_bold"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/message_rates_text"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="50dp"
+        />
+
+    <!--Navigation Bar-->
+    <include
+        layout="@layout/navigation_bar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

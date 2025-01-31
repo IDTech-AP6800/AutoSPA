@@ -28,6 +28,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".WashPackageActivity"
@@ -50,10 +51,32 @@
             android:exported="true" />
         <activity
             android:name=".InsertCardActivity"
-            android:exported="true" />
+
+            android:exported="true">
+        </activity>
         <activity
             android:name=".TapCardActivity"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
+        <activity android:name=".ReceiptOptionsActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".QRCodeReceiptActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".EmailReceiptActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".SMSReceiptActivity"
+            android:exported="true">
+        </activity>
+        <activity android:name=".ReceiptSentActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Instructions"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

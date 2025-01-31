@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Instructions">
+
+    <!-- Background -->
+    <include
+        layout="@layout/background_1"
+        tools:layout_editor_absoluteX="-158dp"
+        tools:layout_editor_absoluteY="-366dp" />
+
+    <!-- GuideLines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bubble_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="150dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/text_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="60dp"/>
+
+    <!-- Instruction Items -->
+
+    <ImageView
+        android:id="@+id/imageView2_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bubble_bullet_point"
+        app:layout_constraintStart_toStartOf="@id/bubble_guide"
+        app:layout_constraintTop_toTopOf="@id/top_guide" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Close all windows and sunroof"
+        android:textSize="20sp"
+        android:textColor="@color/primaryPurple"
+        android:fontFamily="@font/opensans_bold"
+        app:layout_constraintStart_toEndOf="@id/text_guide"
+        app:layout_constraintTop_toTopOf="@id/imageView2_1"
+        app:layout_constraintBottom_toBottomOf="@id/imageView2_1" />
+
+    <ImageView
+        android:id="@+id/imageView2_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bubble_bullet_point"
+        app:layout_constraintStart_toStartOf="@id/bubble_guide"
+        app:layout_constraintTop_toBottomOf="@id/imageView2_1"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Put your car in neutral"
+        android:textSize="20sp"
+        android:textColor="@color/primaryPurple"
+        android:fontFamily="@font/opensans_bold"
+        app:layout_constraintStart_toEndOf="@id/text_guide"
+        app:layout_constraintTop_toTopOf="@id/imageView2_2"
+        app:layout_constraintBottom_toBottomOf="@id/imageView2_2"/>
+
+    <ImageView
+        android:id="@+id/imageView2_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bubble_bullet_point"
+        app:layout_constraintStart_toStartOf="@id/bubble_guide"
+        app:layout_constraintTop_toBottomOf="@id/imageView2_2"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hands off the steering wheel"
+        android:textSize="20sp"
+        android:textColor="@color/primaryPurple"
+        android:fontFamily="@font/opensans_bold"
+        app:layout_constraintStart_toEndOf="@id/text_guide"
+        app:layout_constraintTop_toTopOf="@id/imageView2_3"
+        app:layout_constraintBottom_toBottomOf="@id/imageView2_3" />
+
+    <ImageView
+        android:id="@+id/imageView2_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/bubble_guide"
+        app:layout_constraintTop_toBottomOf="@id/imageView2_3"
+        app:srcCompat="@drawable/bubble_bullet_point" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove foot from the brake"
+        android:textSize="20sp"
+        android:textColor="@color/primaryPurple"
+        android:fontFamily="@font/opensans_bold"
+        app:layout_constraintStart_toEndOf="@id/text_guide"
+        app:layout_constraintTop_toTopOf="@id/imageView2_4"
+        app:layout_constraintBottom_toBottomOf="@id/imageView2_4"/>
+
+    <ImageView
+        android:id="@+id/imageView2_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bubble_bullet_point"
+        app:layout_constraintStart_toStartOf="@id/bubble_guide"
+        app:layout_constraintTop_toBottomOf="@id/imageView2_4"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Turn off windshield wipers"
+        android:textSize="20sp"
+        android:textColor="@color/primaryPurple"
+        android:fontFamily="@font/opensans_bold"
+        app:layout_constraintStart_toEndOf="@id/text_guide"
+        app:layout_constraintTop_toTopOf="@id/imageView2_5"
+        app:layout_constraintBottom_toBottomOf="@id/imageView2_5" />
+
+    <ImageView
+        android:id="@+id/imageView2_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bubble_bullet_point"
+        app:layout_constraintStart_toStartOf="@id/bubble_guide"
+        app:layout_constraintTop_toBottomOf="@id/imageView2_5"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom = "30dp"
+        android:text="Drive forward slowly when instructed"
+        android:textSize="20sp"
+        android:textColor="@color/primaryPurple"
+        android:fontFamily="@font/opensans_bold"
+        app:layout_constraintStart_toEndOf="@id/text_guide"
+        app:layout_constraintTop_toTopOf="@id/imageView2_6" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="212dp"
+        android:layout_height="143dp"
+        app:layout_constraintStart_toStartOf="@id/bubble_guide"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView6"
+        app:srcCompat="@drawable/the_car" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
