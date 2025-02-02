@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background -->
+    <include
+        layout="@layout/background_1" />
+
+    <!-- Instruction Title -->
+    <TextView
+        android:id="@+id/instructionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instructions"
+        android:textColor="@color/primaryPurple"
+        android:fontFamily="@font/opensans_bold"
+        android:textSize="34sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp" />
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/instructionTitle"
+        android:layout_above="@id/navigation_bar"
+        android:paddingHorizontal="30dp"
+        android:scrollbars="vertical"> <!-- Enables Scrollbar -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/instruction_line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.  Tap to Start the car wash process."
+                android:textColor="@color/secondaryPurple"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/instruction_line2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.  Select a Wash Package from the tier carousel."
+                android:textColor="@color/secondaryPurple"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/instruction_line3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.  Choose Optional Add-ons, if desired."
+                android:textColor="@color/secondaryPurple"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/instruction_line4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.  Pick a Payment Method and follow the instructions."
+                android:textColor="@color/secondaryPurple"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/instruction_line5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5.  Select Receipt Preferences for your records."
+                android:textColor="@color/secondaryPurple"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/instruction_line6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.  You're all set! Enjoy your wash!"
+                android:textColor="@color/secondaryPurple"
+                android:fontFamily="@font/opensans_semibold"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Direction to return to Home or Previous Page -->
+            <TextView
+                android:id="@+id/returnDirection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the Back button (left) or Home button (middle) to go to the previous or Home page."
+                android:textColor="@color/secondaryPurple"
+                android:fontFamily="@font/opensans_mediumitalic"
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="After 60 seconds of inactivity, you'll be redirected to the Home page."
+                android:textColor="@color/secondaryPurple"
+                android:fontFamily="@font/opensans_mediumitalic"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Navigation Bar -->
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/navigation_bar"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

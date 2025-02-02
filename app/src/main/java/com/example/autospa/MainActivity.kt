@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         val rootView = findViewById<View>(android.R.id.content)
         val backgroundImageView = findViewById<ImageView>(R.id.background_3)
+        val infoButton = findViewById<ImageView>(R.id.infoButton)
 
         // Load the translate animation
         val translateAnimation: Animation = AnimationUtils.loadAnimation(this, R.anim.translate_background)
@@ -34,6 +35,11 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this@MainActivity, WashPackageActivity::class.java)
                 startActivity(intent)
             }
+        }
+
+        infoButton.setOnClickListener{
+            val intent = Intent(this@MainActivity, AppManualActivity::class.java)
+            startActivity(intent)
         }
     }
 }
