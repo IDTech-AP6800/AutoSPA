@@ -8,12 +8,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.camera.view.PreviewView
 import com.example.autospa.activities.NavigationBar
 
 class SwipeCardActivity : AppCompatActivity() {
     private lateinit var imageVerticalCar: ImageView
     private lateinit var imageVerticalLine: ImageView
+
+    private var totalDue = CarWashSession.totalDue
+    private lateinit var amountText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +27,9 @@ class SwipeCardActivity : AppCompatActivity() {
         imageVerticalCar = findViewById(R.id.img_vertical_car)
         imageVerticalLine = findViewById(R.id.img_vertical_line)
         startAnimations(imageVerticalCar, imageVerticalLine)
+
+        amountText = findViewById(R.id.totalDue)
+        amountText.text = "Amount Due: $" + String.format("%.2f", totalDue)
     }
 }
 
