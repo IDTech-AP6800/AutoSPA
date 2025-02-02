@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.autospa.activities.NavigationBar
 import com.idtech.zsdk_client.Client
@@ -17,6 +18,8 @@ import com.idtech.zsdk_client.*
 
 class InsertCardActivity : AppCompatActivity() {
 
+    private var totalDue = CarWashSession.totalDue
+    private lateinit var amountText: TextView
     private var devices: List<String> = emptyList()
     private var connectedDeviceId: String? = null
 
@@ -79,6 +82,9 @@ class InsertCardActivity : AppCompatActivity() {
                 }
             }
         }
+
+        amountText = findViewById(R.id.totalDue)
+        amountText.text = "Amount Due: $" + String.format("%.2f", totalDue)
     }
     private fun cancelTransaction() {
         connectedDeviceId?.let { connectedDeviceId ->
@@ -130,9 +136,6 @@ class InsertCardActivity : AppCompatActivity() {
 
     private fun startCarAnimation(car: ImageView, bubble: ImageView) {
         car.post {
-            Log.d("Debug", "before car.x: ${car.x}, before car.y: ${car.y}")
-            Log.d("Debug", "car.translationX: ${car.translationX}, car.translationY: ${car.translationY}")
-            Log.d("Debug", "bubble_three.x: ${bubble.x}, bubble_three.y: ${bubble.y}")
 
             val bubbleCenterX = bubble.x + (bubble.width / 4)
             val bubbleCenterY = bubble.y + (bubble.height / 4)

@@ -24,8 +24,6 @@
         app:layout_constraintTop_toTopOf="@id/bubble_3" />
 
     <!--Image: Bubble 3-->
-
-    <!--Image: Bubble 2-->
     <ImageView
         android:id="@+id/bubble_3"
         android:layout_width="170dp"
@@ -37,15 +35,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!--Image: Bubble 2-->
     <ImageView
         android:id="@+id/bubble_2"
         android:src="@drawable/blue_bubble_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/text_amountDue"
+        app:layout_constraintBottom_toTopOf="@+id/totalDue"
         app:layout_constraintTop_toBottomOf="@id/text_desc_scan"
-        app:layout_constraintTop_toTopOf="@+id/text_amountDue"
-        app:layout_constraintRight_toLeftOf="@+id/text_amountDue" />
+        app:layout_constraintTop_toTopOf="@+id/totalDue"
+        app:layout_constraintRight_toLeftOf="@+id/totalDue" />
 
     <!--Image: Bubble 1-->
     <ImageView
@@ -59,8 +58,6 @@
         app:layout_constraintTop_toTopOf="@+id/text_title_scan" />
 
     <!--Text: Tap Card-->
-
-    <!--Text: Tap instruction-->
     <TextView
         android:id="@+id/text_title_scan"
         android:layout_width="wrap_content"
@@ -75,6 +72,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--Text: Tap instruction-->
     <TextView
         android:id="@+id/text_desc_scan"
         android:text="Hold your card close to the reader until you see a confirmation."
@@ -89,11 +87,9 @@
         app:layout_constraintRight_toRightOf="@id/text_title_scan"
         app:layout_constraintTop_toBottomOf="@id/text_title_scan" />
 
-    <!--Text: AMount Due-->
-
-    <!--Layout: Navigation Bar-->
+    <!--Text: Amount Due-->
     <TextView
-        android:id="@+id/text_amountDue"
+        android:id="@+id/totalDue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -102,9 +98,11 @@
         android:text="Amount Due: $"
         android:textColor="@color/primaryPurple"
         android:textSize="32sp"
-        app:layout_constraintRight_toRightOf="@id/text_desc_scan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_desc_scan" />
 
+    <!--Layout: Navigation Bar-->
     <include
         android:id="@+id/navigation_bar"
         layout="@layout/navigation_bar" />

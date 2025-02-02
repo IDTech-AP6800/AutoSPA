@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import android.widget.TextView
+import androidx.camera.view.PreviewView
 import com.example.autospa.activities.NavigationBar
 import android.content.Intent
 import com.idtech.zsdk_client.CancelTransactionAsync
@@ -26,6 +28,8 @@ class SwipeCardActivity : AppCompatActivity() {
     private lateinit var imageVerticalCar: ImageView
     private lateinit var imageVerticalLine: ImageView
 
+    private var totalDue = CarWashSession.totalDue
+    private lateinit var amountText: TextView
     private var devices: List<String> = emptyList()
     private var connectedDeviceId: String? = null
 
@@ -38,6 +42,8 @@ class SwipeCardActivity : AppCompatActivity() {
         imageVerticalLine = findViewById(R.id.img_vertical_line)
         startAnimations(imageVerticalCar, imageVerticalLine)
 
+        amountText = findViewById(R.id.totalDue)
+        amountText.text = "Amount Due: $" + String.format("%.2f", totalDue)
         // Start the swipe transaction process
         startSwipeCardTransaction()
     }

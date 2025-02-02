@@ -8,6 +8,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.animation.LinearInterpolator
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.autospa.activities.NavigationBar
 import com.idtech.zsdk_client.Client
@@ -22,6 +23,8 @@ import com.idtech.zsdk_client.CancelTransactionAsync
 
 class TapCardActivity : AppCompatActivity() {
 
+    private var totalDue = CarWashSession.totalDue
+    private lateinit var amountText: TextView
     private var devices: List<String> = emptyList()
     private var connectedDeviceId: String? = null
 
@@ -82,6 +85,9 @@ class TapCardActivity : AppCompatActivity() {
                 }
             }
         }
+
+        amountText = findViewById(R.id.totalDue)
+        amountText.text = "Amount Due: $" + String.format("%.2f", totalDue)
     }
 
     private fun cancelTransaction() {

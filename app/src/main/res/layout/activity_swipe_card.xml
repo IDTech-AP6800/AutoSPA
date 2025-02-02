@@ -8,44 +8,43 @@
 
     <!--Background-->
     <include
-        android:id="@+id/include2"
+        android:id="@+id/background_1"
         layout="@layout/background_1"
         tools:layout_editor_absoluteX="-37dp"
         tools:layout_editor_absoluteY="-84dp" />
 
     <!--Navigation Bar-->
     <include
-        android:id="@+id/include"
+        android:id="@+id/navigation_bar"
         layout="@layout/navigation_bar"
         tools:layout_editor_absoluteY="607dp" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/bubble_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
+        android:paddingLeft="40dp"
+        android:paddingTop="20dp"
         android:src="@drawable/blue_bubble_1"
         app:layout_constraintBottom_toTopOf="@id/text_title_scan"
         app:layout_constraintLeft_toLeftOf="@id/text_title_scan" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/bubble_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="352dp"
-        android:layout_marginEnd="76dp"
         android:src="@drawable/blue_bubble_2"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/include2" />
+        app:layout_constraintTop_toBottomOf="@id/totalDue"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/bubble_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="232dp"
         android:src="@drawable/blue_bubble_3"
-        app:layout_constraintStart_toStartOf="@+id/text_amountDue"
+        app:layout_constraintRight_toRightOf="@id/totalDue"
         app:layout_constraintTop_toBottomOf="@+id/text_title_scan" />
 
     <TextView
@@ -53,13 +52,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
+        android:paddingLeft="30dp"
         android:fontFamily="@font/opensans_bold"
         android:text="Swipe Your Card to Proceed"
         android:textColor="@color/primaryPurple"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/text_desc_scan"
-        app:layout_constraintStart_toStartOf="@+id/text_amountDue"
-        app:layout_constraintTop_toTopOf="@+id/include2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintVertical_bias="0.968" />
 
     <TextView
@@ -67,37 +67,40 @@
         android:layout_width="286dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
+        android:paddingLeft="30dp"
         android:fontFamily="@font/opensans_semibolditalic"
         android:text="Insert the magnetic strip facing downwards"
         android:textColor="@color/primaryPurple"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/include"
-        app:layout_constraintEnd_toStartOf="@+id/img_vertical_line"
-        app:layout_constraintTop_toTopOf="@+id/include2"
+        app:layout_constraintBottom_toTopOf="@+id/navigation_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintVertical_bias="0.402" />
 
     <TextView
-        android:id="@+id/text_amountDue"
+        android:id="@+id/totalDue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="140dp"
         android:fontFamily="@font/opensans_bold"
+        android:paddingLeft="30dp"
         android:text="Amount Due: $"
         android:textColor="@color/primaryPurple"
         android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="@+id/include2"
-        app:layout_constraintTop_toBottomOf="@+id/text_desc_scan" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_desc_scan"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/img_vertical_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="96dp"
         android:layout_marginTop="64dp"
+        android:paddingLeft="30dp"
         android:src="@drawable/gray_vertical_line"
-        app:layout_constraintLeft_toRightOf="@id/text_amountDue"
-        app:layout_constraintTop_toTopOf="@+id/include2" />
+        app:layout_constraintLeft_toRightOf="@id/totalDue"
+        app:layout_constraintTop_toTopOf="@+id/background_1" />
 
     <ImageView
         android:id="@+id/img_vertical_car"
