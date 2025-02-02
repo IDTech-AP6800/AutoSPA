@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         val rootView = findViewById<View>(android.R.id.content)
         val backgroundImageView = findViewById<ImageView>(R.id.background_3)
+        val infoButton = findViewById<ImageView>(R.id.infoButton)
 
         // Load the translate animation
         val translateAnimation: Animation = AnimationUtils.loadAnimation(this, R.anim.translate_background)
@@ -39,12 +40,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Observe connection status
+      // Observe connection status
         viewModel.connectionStatus.observe(this) { status ->
             Log.d("ConnectionStatus", "Connection status: $status")
         }
 
         // Trigger server connection
         viewModel.connectToServer("127.0.0.1", "42501", this)
+
+        infoButton.setOnClickListener{
+            val intent = Intent(this@MainActivity, AppManualActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
