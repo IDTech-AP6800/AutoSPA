@@ -2,7 +2,6 @@ package com.example.autospa
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.app.ActivityOptions
 import android.content.Intent
 import android.graphics.Path
 import android.os.Bundle
@@ -11,8 +10,16 @@ import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.autospa.activities.NavigationBar
+import com.idtech.zsdk_client.Client
+import com.idtech.zsdk_client.StartTransactionResponseData
+import kotlinx.coroutines.*
+import com.idtech.zsdk_client.*
 
 class InsertCardActivity : AppCompatActivity() {
+
+    private var devices: List<String> = emptyList()
+    private var connectedDeviceId: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insert_card)
@@ -26,18 +33,99 @@ class InsertCardActivity : AppCompatActivity() {
         // Get the root view of the activity's layout
         val rootView: View = findViewById(android.R.id.content)
 
-        // Set an OnClickListener to detect taps on the screen
-        rootView.setOnClickListener {
+        // Start the EMV transaction process
+        startEMVTransaction()
+    }
 
-            // Navigate to PaymentProcessingActivity
-            val intent = Intent(this, PaymentProcessingActivity::class.java)
-            val options = ActivityOptions.makeCustomAnimation(
-                this,
-                R.anim.fade_in, // Enter animation
-                R.anim.fade_out // Exit animation
-            )
-            startActivity(intent, options.toBundle())
+    private fun startEMVTransaction() {
+        CoroutineScope(Dispatchers.IO).launch {
+            // Enumerate devices
+            if (enumerateDevices()) {
+                connectedDeviceId = devices.firstOrNull()
+            }
+
+            connectedDeviceId?.let { deviceId ->
+                // Enable auto-authenticate
+                Client.SetAutoAuthenticateAsync(deviceId, true)
+                    .waitForCompletionWithTimeout(1000)
+
+                // Enable auto-complete
+                Client.SetAutoCompleteAsync(deviceId, true)
+                    .waitForCompletionWithTimeout(1000)
+
+                // Define transaction parameters
+                val amount = 0.1
+                val amountOther = 0.0
+                val transType: UByte = 0u
+                val transTimeout: UByte = 100u
+                val transInterfaceType: Int = 4 // 4 for EMV (Insert)
+
+                // Start the transaction
+                val startTransCmd = Client.StartTransactionAsync(
+                    deviceId,
+                    amount, amountOther, transType, transTimeout,
+                    transInterfaceType.toUByte(), 3000
+                )
+
+                startTransCmd.waitForCompletion()
+
+                // Check the transaction status
+                val resultData: StartTransactionResponseData? = startTransCmd.getResultData()
+                if (resultData != null) {
+                    // If transaction succeeds, navigate to ProcessingActivity
+                    withContext(Dispatchers.Main) {
+                        navigateToProcessingActivity()
+                    }
+                }
+            }
         }
+    }
+    private fun cancelTransaction() {
+        connectedDeviceId?.let { connectedDeviceId ->
+            CoroutineScope(Dispatchers.IO).launch {
+                Client.CancelTransactionAsync(connectedDeviceId!!)
+                Log.d(TAG, "Transaction canceled successfully.")
+            }
+        } ?: Log.d(TAG, "No connected device ID available for canceling transaction.")
+    }
+
+
+    private suspend fun enumerateDevices(): Boolean {
+        return runCatching {
+            val cmd = Client.GetDevicesAsync()
+            cmd.waitForCompletionWithTimeout(3000)
+            devices = cmd.devices
+            devices.isNotEmpty()
+        }.getOrDefault(false)
+    }
+
+    private fun navigateToProcessingActivity() {
+        val intent = Intent(this, PaymentProcessingActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        //When the activity is paused, cancel transaction
+        cancelTransaction()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        //When the activity is resume, start the transaction again
+        startEMVTransaction()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        cancelTransaction()
+    }
+
+    companion object {
+        private const val TAG = "InsertCardActivity"
     }
 
     private fun startCarAnimation(car: ImageView, bubble: ImageView) {
