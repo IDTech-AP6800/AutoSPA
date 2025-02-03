@@ -48,11 +48,16 @@ class QRCodeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_qr_code)
         NavigationBar(this)
 
+        // Find views
         imageVerticalCar = findViewById(R.id.img_vertical_car)
         imageCam = findViewById(R.id.camera_preview)
-        //Start animations
+        amountText = findViewById(R.id.text_amountDue)
+
+        // Start animations
         startAnimations(imageVerticalCar, imageCam)
 
+        // Set text for
+        amountText.text = "Amount Due: $" + String.format("%.2f", totalDue)
 
         // Request camera permissions
         if (allPermissionsGranted()) {
@@ -61,10 +66,6 @@ class QRCodeActivity : AppCompatActivity() {
         } else {
             requestPermissions()
         }
-
-        amountText = findViewById(R.id.text_amountDue)
-        amountText.text = "Amount Due: $" + String.format("%.2f", totalDue)
-
     }
 
 

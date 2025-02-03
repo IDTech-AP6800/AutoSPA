@@ -7,32 +7,46 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.core.motion.Motion
 import androidx.constraintlayout.motion.widget.MotionLayout
 import com.example.autospa.activities.NavigationBar
 
+/* This code controls the wash package selection for the car wash
+  */
 class WashPackageActivity : AppCompatActivity() {
 
 
+    private lateinit var button: Button
+    private lateinit var motionLayout: MotionLayout
+    private var currPackage = 18
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wash_package)
-
         NavigationBar(this)
 
-        val button = findViewById<Button>(R.id.button)
-        var currPackage = 18
+        // Find views
+        button = findViewById(R.id.button_continue)
+        motionLayout = findViewById(R.id.motion_layout)
 
+
+        // Setup button listener
+        buttonListener()
+
+        // Save current page
+        savePageListener()
+
+    }
+
+    private fun buttonListener() {
         button.setOnClickListener {
             CarWashSession.totalDue = currPackage.toDouble()
             val intent = Intent(this@WashPackageActivity, OptionalAddOnsActivity::class.java)
             val options = ActivityOptions.makeCustomAnimation(this, R.anim.fade_in, R.anim.fade_out)
             startActivity(intent, options.toBundle())
         }
+    }
 
-
-        //Save Current Page
-        // TODO: This is a very laggy work around, so we need to find a better way to implement
-        var motionLayout = findViewById<MotionLayout>(R.id.motion_layout)
+    private fun savePageListener() {
         motionLayout.addTransitionListener(object: MotionLayout.TransitionListener{
             override fun onTransitionStarted(
                 motionLayout: MotionLayout?,
@@ -75,7 +89,6 @@ class WashPackageActivity : AppCompatActivity() {
             ) {
             }
         })
-
     }
 
 }

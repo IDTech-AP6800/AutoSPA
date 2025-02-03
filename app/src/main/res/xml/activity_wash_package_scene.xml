@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
-    <!--//xmlns:motion="http://schemas.android.com/tools"-->
 
+    <!--Silver to Gold, Gold to Silver-->
     <Transition
         motion:constraintSetEnd="@+id/next"
         motion:constraintSetStart="@id/start"
@@ -13,6 +13,7 @@
             motion:touchAnchorSide="left"/>
     </Transition>
 
+    <!--Silver to Bronze, Bronze to Silver -->
     <Transition
         motion:constraintSetEnd="@+id/previous"
         motion:constraintSetStart="@id/start"
@@ -22,8 +23,9 @@
             motion:touchAnchorSide="right"/>
     </Transition>
 
+    <!--Gold to Plat -->
     <Transition
-        motion:constraintSetEnd="@+id/next_plat"
+        motion:constraintSetEnd="@id/next_plat"
         motion:constraintSetStart="@id/next"
         motion:duration="1000"
         android:id="@+id/forward_plat">
@@ -32,8 +34,9 @@
             motion:touchAnchorSide="left"/>
     </Transition>
 
+    <!-- Plat to Gold-->
     <Transition
-        motion:constraintSetEnd="@+id/next"
+        motion:constraintSetEnd="@id/next"
         motion:constraintSetStart="@id/next_plat"
         motion:duration="1000"
         android:id="@+id/backward_plat">
@@ -42,19 +45,19 @@
             motion:touchAnchorSide="right"/>
     </Transition>
 
+    <!-- Bronze Tier Emphasized -->
     <ConstraintSet android:id = "@+id/previous">
-
         <Constraint
-            android:id="@id/silver_tier"
+            android:id="@id/image_silver_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintStart_toEndOf="@id/bronze_tier"
+            motion:layout_constraintStart_toEndOf="@id/image_bronze_tier"
             motion:layout_constraintTop_toTopOf="parent"
             />
 
         <Constraint
-            android:id="@id/bronze_tier"
+            android:id="@id/image_bronze_tier"
             android:layout_width="288dp"
             android:layout_height="360dp"
             motion:layout_constraintBottom_toBottomOf="parent"
@@ -63,25 +66,26 @@
             motion:layout_constraintTop_toTopOf="parent"
             />
         <Constraint
-            android:id="@+id/gold_tier"
+            android:id="@id/image_gold_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintStart_toEndOf="@id/silver_tier"
+            motion:layout_constraintStart_toEndOf="@id/image_silver_tier"
             motion:layout_constraintTop_toTopOf="parent"/>
         <Constraint
-            android:id="@+id/plat_tier"
+            android:id="@id/image_plat_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintStart_toEndOf="@id/gold_tier"
+            motion:layout_constraintStart_toEndOf="@id/image_gold_tier"
             motion:layout_constraintTop_toTopOf="parent"/>
 
     </ConstraintSet>
 
+    <!-- Silver Tier Emphasized -->
     <ConstraintSet android:id = "@id/start">
         <Constraint
-            android:id="@id/silver_tier"
+            android:id="@id/image_silver_tier"
             android:layout_width="288dp"
             android:layout_height="360dp"
             motion:layout_constraintBottom_toBottomOf="parent"
@@ -90,48 +94,48 @@
             motion:layout_constraintTop_toTopOf="parent"/>
 
         <Constraint
-            android:id="@id/bronze_tier"
+            android:id="@id/image_bronze_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toStartOf="@id/silver_tier"
+            motion:layout_constraintEnd_toStartOf="@id/image_silver_tier"
             motion:layout_constraintTop_toTopOf="parent"/>
 
         <Constraint
-            android:id="@+id/gold_tier"
+            android:id="@id/image_gold_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintStart_toEndOf="@id/silver_tier"
+            motion:layout_constraintStart_toEndOf="@id/image_silver_tier"
             motion:layout_constraintTop_toTopOf="parent"/>
 
         <Constraint
-            android:id="@+id/plat_tier"
+            android:id="@id/image_plat_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintStart_toEndOf="@id/gold_tier"
+            motion:layout_constraintStart_toEndOf="@id/image_gold_tier"
             motion:layout_constraintTop_toTopOf="parent"/>
-
     </ConstraintSet>
 
+    <!-- Gold Tier Emphasized -->
     <ConstraintSet android:id = "@id/next">
         <Constraint
-            android:id="@id/bronze_tier"
+            android:id="@id/image_bronze_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toStartOf="@id/silver_tier"
+            motion:layout_constraintEnd_toStartOf="@id/image_silver_tier"
             motion:layout_constraintTop_toTopOf="parent"/>
         <Constraint
-            android:id="@id/silver_tier"
+            android:id="@id/image_silver_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toStartOf="@id/gold_tier"
+            motion:layout_constraintEnd_toStartOf="@id/image_gold_tier"
             motion:layout_constraintTop_toTopOf="parent"/>
         <Constraint
-            android:id="@+id/gold_tier"
+            android:id="@id/image_gold_tier"
             android:layout_width="288dp"
             android:layout_height="360dp"
             motion:layout_constraintBottom_toBottomOf="parent"
@@ -140,38 +144,39 @@
             motion:layout_constraintTop_toTopOf="parent" />
 
         <Constraint
-            android:id="@+id/plat_tier"
+            android:id="@id/image_plat_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintStart_toEndOf="@id/gold_tier"
+            motion:layout_constraintStart_toEndOf="@id/image_gold_tier"
             motion:layout_constraintTop_toTopOf="parent"/>
     </ConstraintSet>
 
+    <!-- Silver Tier Emphasized -->
     <ConstraintSet android:id="@+id/next_plat">
         <Constraint
-            android:id="@id/bronze_tier"
+            android:id="@id/image_bronze_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toStartOf="@id/silver_tier"
+            motion:layout_constraintEnd_toStartOf="@id/image_silver_tier"
             motion:layout_constraintTop_toTopOf="parent"/>
         <Constraint
-            android:id="@id/silver_tier"
+            android:id="@id/image_silver_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toStartOf="@id/gold_tier"
+            motion:layout_constraintEnd_toStartOf="@id/image_gold_tier"
             motion:layout_constraintTop_toTopOf="parent"/>
         <Constraint
-            android:id="@+id/gold_tier"
+            android:id="@id/image_gold_tier"
             android:layout_width="256dp"
             android:layout_height="320dp"
             motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toStartOf="@id/plat_tier"
+            motion:layout_constraintEnd_toStartOf="@id/image_plat_tier"
             motion:layout_constraintTop_toTopOf="parent" />
         <Constraint
-            android:id="@+id/plat_tier"
+            android:id="@id/image_plat_tier"
             android:layout_width="288dp"
             android:layout_height="360dp"
             motion:layout_constraintBottom_toBottomOf="parent"
