@@ -17,9 +17,9 @@
         android:layout_marginEnd="96dp"
         android:layout_marginBottom="92dp"
         android:src="@drawable/blue_bubble_1"
-        app:layout_constraintBottom_toTopOf="@id/text_title_scan"
+        app:layout_constraintBottom_toTopOf="@id/text_title_insert"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/text_title_scan" />
+        app:layout_constraintLeft_toRightOf="@id/text_title_insert" />
 
     <!--Bubble 2-->
     <ImageView
@@ -61,12 +61,12 @@
 
     <!--Displayed Text-->
     <TextView
-        android:id="@+id/text_title_scan"
+        android:id="@+id/text_title_insert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/opensans_bold"
-        android:text="Insert Your Card to \nProceed"
+        android:text="Insert Your Card To \nProceed"
         android:textAlignment="center"
         android:textColor="@color/primaryPurple"
         android:textSize="32sp"
@@ -87,12 +87,10 @@
         android:textSize="16sp"
         android:textAlignment="center"
         android:fontFamily="@font/opensans_semibolditalic"
-        app:layout_constraintLeft_toLeftOf="@id/text_title_scan"
-        app:layout_constraintRight_toRightOf="@id/text_title_scan"
-        app:layout_constraintTop_toBottomOf="@id/text_title_scan"
+        app:layout_constraintLeft_toLeftOf="@id/text_title_insert"
+        app:layout_constraintRight_toRightOf="@id/text_title_insert"
+        app:layout_constraintTop_toBottomOf="@id/text_title_insert"
         app:layout_constraintBottom_toTopOf="@id/totalDue"/>
-
-    <!--Navigation Bar-->
 
     <TextView
         android:id="@+id/totalDue"
@@ -110,6 +108,7 @@
         app:layout_constraintRight_toRightOf="@id/text_desc_scan"
         app:layout_constraintTop_toBottomOf="@id/text_desc_scan" />
 
+    <!--Navigation Bar-->
     <include
         layout="@layout/navigation_bar"/>
 
