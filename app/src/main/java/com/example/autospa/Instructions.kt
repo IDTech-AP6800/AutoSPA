@@ -17,6 +17,13 @@ class Instructions : AppCompatActivity() {
 
     private var mediaPlayer: MediaPlayer? = null
 
+    private val handler = Handler(Looper.getMainLooper())
+    private val returnToMainRunnable = Runnable {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_instructions)
@@ -55,20 +62,17 @@ class Instructions : AppCompatActivity() {
             }
         }
 
-        // Tap on page to return to Main Activity
+        // Tap on page to return to Main Activity and cancel the timer
         val rootView = findViewById<View>(android.R.id.content)
         rootView.setOnClickListener {
+            handler.removeCallbacks(returnToMainRunnable) // Cancel the timer
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
 
-        // Delay for 20 seconds and then go to Main Class
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, 20000)
+        // Delay for 20 seconds and then go to MainActivity
+        handler.postDelayed(returnToMainRunnable, 20000)
 
         // Play the audio when the page opens
         playInstructionAudio()
@@ -79,5 +83,6 @@ class Instructions : AppCompatActivity() {
         super.onDestroy()
         mediaPlayer?.release() // Release MediaPlayer when the activity is destroyed
         mediaPlayer = null
+        handler.removeCallbacks(returnToMainRunnable)
     }
 }
