@@ -62,7 +62,7 @@ class SMSReceiptActivity : AppCompatActivity() {
         val errorMessage = findViewById<TextView>(R.id.phone_error_message)
         val continueButton = findViewById<Button>(R.id.sms_receipt_continue)
         val phoneNumber = findViewById<EditText>(R.id.phone_number_text_box)
-        val navigationBar = findViewById<View>(R.id.navigation_bar) // Adjust ID as per your XML
+        val navigationBar = findViewById<View>(R.id.navigation_bar)
 
         rootView.setOnClickListener {
             // Clear the error message and reset visuals

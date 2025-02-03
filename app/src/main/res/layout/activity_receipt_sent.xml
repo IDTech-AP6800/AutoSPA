@@ -35,7 +35,7 @@
             android:id="@+id/tap_to_return_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tap to return home"
+            android:text="Tap to proceed\nto Instructions"
             android:fontFamily="@font/opensans_bold"
             android:textColor="@color/primaryPurple"
             android:textSize="25sp"

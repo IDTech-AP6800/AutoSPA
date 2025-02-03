@@ -3,8 +3,11 @@ package com.example.autospa
 import android.animation.ObjectAnimator
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.DisplayMetrics
 import android.view.View
 import android.widget.ImageView
@@ -51,6 +54,21 @@ class Instructions : AppCompatActivity() {
                 animator.start()
             }
         }
+
+        // Tap on page to return to Main Activity
+        val rootView = findViewById<View>(android.R.id.content)
+        rootView.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        // Delay for 20 seconds and then go to Main Class
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, 20000)
 
         // Play the audio when the page opens
         playInstructionAudio()

@@ -45,12 +45,11 @@ class ReceiptOptionsActivity : AppCompatActivity() {
         //No receipt option event listener
         val noReceiptOption = findViewById<LinearLayout>(R.id.no_receipt)
         noReceiptOption.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, Instructions::class.java)
             val options = ActivityOptions.makeCustomAnimation(
                 this, R.anim.fade_in, R.anim.fade_out
             )
             startActivity(intent, options.toBundle())
-            finish()
         }
     }
 }

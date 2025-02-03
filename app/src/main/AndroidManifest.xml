@@ -52,28 +52,28 @@
             android:exported="true" />
         <activity
             android:name=".InsertCardActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".TapCardActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".ReceiptOptionsActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".QRCodeReceiptActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".EmailReceiptActivity"
-            android:exported="true"></activity>
+            android:exported="true"/>
         <activity
             android:name=".SMSReceiptActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ReceiptSentActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Instructions"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -41,7 +42,8 @@ class PaymentSuccessActivity: AppCompatActivity() {
         // Delay for 3 seconds and then go to Receipt Options
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, ReceiptOptionsActivity::class.java)
-            startActivity(intent)
+            val options = ActivityOptions.makeCustomAnimation(this, R.anim.fade_in, R.anim.fade_out)
+            startActivity(intent, options.toBundle())
         }, 3000)
 
     }

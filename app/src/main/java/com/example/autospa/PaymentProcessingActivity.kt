@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.app.ActivityOptions
 import android.widget.ImageView
 import android.os.Handler
 import android.os.Looper
@@ -22,11 +23,18 @@ class PaymentProcessingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_processing)
 
-        val rootView = findViewById<View>(android.R.id.content)
-        rootView.setOnClickListener {
-            val intent = Intent(this@PaymentProcessingActivity, PaymentSuccessActivity::class.java)
-            startActivity(intent)
-        }
+//        val rootView = findViewById<View>(android.R.id.content)
+//        rootView.setOnClickListener {
+//            val intent = Intent(this@PaymentProcessingActivity, PaymentSuccessActivity::class.java)
+//            startActivity(intent)
+//        }
+
+        // Delay for 5 seconds and then go to Payment Success
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, PaymentSuccessActivity::class.java)
+            val options = ActivityOptions.makeCustomAnimation(this, R.anim.fade_in, R.anim.fade_out)
+            startActivity(intent, options.toBundle())
+        }, 5000)
 
         val smallBubble1: ImageView = findViewById(R.id.small_bubble_1)
         val largeBubble1: ImageView = findViewById(R.id.large_bubble_1)

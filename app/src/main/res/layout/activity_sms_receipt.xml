@@ -48,6 +48,7 @@
         android:paddingEnd="20dp"
         android:textColor="@color/primaryPurple"
         android:textSize="30sp"
+        android:maxLength="10"
         app:layout_constraintTop_toBottomOf="@id/enter_phone_number_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
