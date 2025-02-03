@@ -86,6 +86,7 @@ class InsertCardActivity : AppCompatActivity() {
         amountText = findViewById(R.id.totalDue)
         amountText.text = "Amount Due: $" + String.format("%.2f", totalDue)
     }
+
     private fun cancelTransaction() {
         connectedDeviceId?.let { connectedDeviceId ->
             CoroutineScope(Dispatchers.IO).launch {
@@ -94,8 +95,7 @@ class InsertCardActivity : AppCompatActivity() {
             }
         } ?: Log.d(TAG, "No connected device ID available for canceling transaction.")
     }
-
-
+    
     private suspend fun enumerateDevices(): Boolean {
         return runCatching {
             val cmd = Client.GetDevicesAsync()

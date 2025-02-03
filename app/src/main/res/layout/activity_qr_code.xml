@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="Scan to pay"
+        android:text="Scan To Pay"
         android:textColor="@color/primaryPurple"
         android:textSize="32sp"
         android:fontFamily="@font/opensans_bold"

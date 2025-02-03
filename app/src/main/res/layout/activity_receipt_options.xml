@@ -31,10 +31,10 @@
             android:id="@+id/receipt_options_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select Receipt Options"
+            android:text="Select Receipt Option"
             android:fontFamily="@font/opensans_bold"
             android:textColor="@color/primaryPurple"
-            android:textSize="30sp"/>
+            android:textSize="32sp"/>
 
         <!-- Receipt Options -->
         <GridLayout
@@ -70,7 +70,7 @@
                     android:text="QR Code Receipt"
                     android:fontFamily="@font/opensans_regular"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:layout_marginTop="5dp"/>
             </LinearLayout>
 
@@ -94,7 +94,7 @@
                     android:text="Email"
                     android:fontFamily="@font/opensans_regular"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:layout_marginTop="5dp"/>
             </LinearLayout>
 
@@ -118,7 +118,7 @@
                     android:text="SMS"
                     android:fontFamily="@font/opensans_regular"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:layout_marginTop="5dp"/>
             </LinearLayout>
 
@@ -137,7 +137,7 @@
                     android:text="No Receipt"
                     android:fontFamily="@font/opensans_regular"
                     android:textColor="@color/white"
-                    android:textSize="14sp"/>
+                    android:textSize="16sp"/>
             </LinearLayout>
 
         </GridLayout>

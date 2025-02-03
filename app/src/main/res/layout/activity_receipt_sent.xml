@@ -24,10 +24,10 @@
             android:id="@+id/receipt_sent_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your receipt\nhas been sent!"
+            android:text="Your Receipt\nHas Been Sent!"
             android:fontFamily="@font/opensans_bold"
             android:textColor="@color/primaryPurple"
-            android:textSize="30sp"
+            android:textSize="32sp"
             android:gravity="center"/>
 
         <!--Tap to Return Home Text-->

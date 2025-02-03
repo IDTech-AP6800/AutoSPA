@@ -54,7 +54,7 @@
         android:layout_marginBottom="7dp"
         android:paddingLeft="30dp"
         android:fontFamily="@font/opensans_bold"
-        android:text="Swipe Your Card to Proceed"
+        android:text="Swipe Your Card To Proceed"
         android:textColor="@color/primaryPurple"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/text_desc_scan"

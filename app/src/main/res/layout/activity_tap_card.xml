@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:fontFamily="@font/opensans_bold"
-        android:text="Tap your card on \n screen to pay"
+        android:text="Tap Your Card On \n Screen To Pay"
         android:textAlignment="center"
         android:textColor="@color/primaryPurple"
         android:textSize="32sp"
@@ -75,7 +75,7 @@
     <!--Text: Tap instruction-->
     <TextView
         android:id="@+id/text_desc_scan"
-        android:text="Hold your card close to the reader until you see a confirmation."
+        android:text="Hold your card close to the reader until you see a confirmation"
         android:textSize="16sp"
         android:fontFamily="@font/opensans_semibolditalic"
         android:textAlignment="center"

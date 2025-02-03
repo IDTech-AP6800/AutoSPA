@@ -81,10 +81,10 @@
         android:id="@+id/payment_options_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Payment Options"
+        android:text="Select Payment Option"
         android:fontFamily="@font/opensans_bold"
         android:textColor="@color/primaryPurple"
-        android:textSize="30sp"
+        android:textSize="32sp"
         app:layout_constraintTop_toTopOf="@id/options_horizontal_line"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="35sp"
@@ -124,7 +124,7 @@
                 android:text="Scan QR Code"
                 android:fontFamily="@font/opensans_regular"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:layout_marginTop="5dp"/>
         </LinearLayout>
 
@@ -148,7 +148,7 @@
                 android:text="Swipe"
                 android:fontFamily="@font/opensans_regular"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:layout_marginTop="5dp"/>
         </LinearLayout>
 
@@ -172,7 +172,7 @@
                 android:text="Insert"
                 android:fontFamily="@font/opensans_regular"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:layout_marginTop="5dp"/>
         </LinearLayout>
 
@@ -196,7 +196,7 @@
                 android:text="Tap"
                 android:fontFamily="@font/opensans_regular"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:layout_marginTop="5dp" />
         </LinearLayout>
 
@@ -210,7 +210,7 @@
         android:fontFamily="@font/opensans_bold"
         android:text="Amount Due: $32.00"
         android:textColor="@color/primaryPurple"
-        android:textSize="30sp"
+        android:textSize="32sp"
         android:layout_marginTop="35dp"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/payment_options"

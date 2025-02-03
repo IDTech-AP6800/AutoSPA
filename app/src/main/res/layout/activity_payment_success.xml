@@ -81,8 +81,8 @@
         android:id="@+id/text_title_success"
         android:layout_width="407dp"
         android:layout_height="wrap_content"
-        android:text="Payment Successful
-        Let's get washing"
+        android:text="Payment Successful.
+        Let's Get Washing!"
         android:textColor="@color/primaryPurple"
         android:textSize="32sp"
         android:fontFamily="@font/opensans_bold"
