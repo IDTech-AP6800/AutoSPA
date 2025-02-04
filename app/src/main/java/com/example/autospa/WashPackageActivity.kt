@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.core.motion.Motion
 import androidx.constraintlayout.motion.widget.MotionLayout
 import com.example.autospa.activities.NavigationBar
 

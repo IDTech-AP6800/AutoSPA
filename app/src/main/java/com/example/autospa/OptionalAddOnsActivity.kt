@@ -31,6 +31,7 @@ class OptionalAddOnsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_optional_add_ons)
 
+        // Initialize Navigation Bar
         NavigationBar(this)
 
         amountText = findViewById(R.id.add_ons_amount_text)

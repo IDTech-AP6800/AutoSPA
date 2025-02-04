@@ -14,7 +14,7 @@ class EmailReceiptActivity : AppCompatActivity(){
         setContentView(R.layout.activity_email_receipt)
         NavigationBar(this)
 
-        //Listener to lead to Receipt Sent
+        // Listener to lead to Receipt Sent
         val continueButton = findViewById<Button>(R.id.email_receipt_continue)
         continueButton.setOnClickListener {
             val intent = Intent(this, ReceiptSentActivity::class.java)
