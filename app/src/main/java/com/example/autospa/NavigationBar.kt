@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.autospa.MainActivity
+import com.example.autospa.HelpActivity
 import com.example.autospa.R
 
 class NavigationBar(activity: AppCompatActivity) {
@@ -19,8 +20,8 @@ class NavigationBar(activity: AppCompatActivity) {
         .findViewById(R.id.back_button_image)
 
     // Initialize "helpButton" as an ImageView representing the help icon
-    private val accessibilityButton: ImageView = activity.findViewById<LinearLayout>(R.id.accessibility_button)
-        .findViewById(R.id.accessibility_button_image)
+    private val accessibilityButton: ImageView = activity.findViewById<LinearLayout>(R.id.help_button_nav)
+        .findViewById(R.id.help_button_image)
 
     // Define a constant string "TAG" for easier filtering in Logcat
     companion object {
@@ -47,6 +48,12 @@ class NavigationBar(activity: AppCompatActivity) {
         backButton.setOnClickListener {
             // Handle back navigation
             activity.onBackPressedDispatcher.onBackPressed()
+        }
+
+
+        accessibilityButton.setOnClickListener{
+           val intent = Intent(activity, HelpActivity::class.java)
+           activity.startActivity(intent)
         }
 
     }

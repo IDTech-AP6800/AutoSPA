@@ -17,6 +17,9 @@
         android:theme="@style/Theme.AutoSPA"
         tools:targetApi="31">
         <activity
+            android:name=".HelpActivity"
+            android:exported="false" />
+        <activity
             android:name=".AppManualActivity"
             android:exported="false" />
         <activity
@@ -64,7 +67,7 @@
             android:exported="true" />
         <activity
             android:name=".EmailReceiptActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".SMSReceiptActivity"
             android:exported="true" />
