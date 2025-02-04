@@ -126,7 +126,7 @@ class SwipeCardActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        //When the activity is resume, start the transaction again
+        //When the activity is resumed, start the transaction again
         startSwipeCardTransaction()
     }
 

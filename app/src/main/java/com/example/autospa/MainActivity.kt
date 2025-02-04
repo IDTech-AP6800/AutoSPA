@@ -16,7 +16,6 @@ import com.idtech.zsdk_client.GetDevicesAsync
 class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainViewModel by viewModels()
-    private var hasClicked = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Client.GetDevicesAsync()
@@ -37,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-      // Observe connection status
+        // Observe connection status
         viewModel.connectionStatus.observe(this) { status ->
             Log.d("ConnectionStatus", "Connection status: $status")
         }

@@ -48,6 +48,7 @@ class PaymentSuccessActivity: AppCompatActivity() {
 
     }
 
+    // Animate for sparkle images
     private fun sparkleAnimation() {
 
         val moveRightS1 = ObjectAnimator.ofFloat(sparkle_1, "translationX", -3f, 3f).apply {

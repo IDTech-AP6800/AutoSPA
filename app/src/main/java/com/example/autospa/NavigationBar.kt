@@ -49,9 +49,5 @@ class NavigationBar(activity: AppCompatActivity) {
             activity.onBackPressedDispatcher.onBackPressed()
         }
 
-//        accessibilityButton.setOnClickListener{
-//            val intent = Intent(activity, HelpActivity::class.java)
-//            activity.startActivity(intent)
-//        }
     }
 }

@@ -18,23 +18,31 @@ import com.idtech.zsdk_client.*
 
 class InsertCardActivity : AppCompatActivity() {
 
+    // Holds the total amount due for the transaction
     private var totalDue = CarWashSession.totalDue
+
+    // TextView to display the amount due
     private lateinit var amountText: TextView
+
+    // List
     private var devices: List<String> = emptyList()
+
+    // Connected device ID
     private var connectedDeviceId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insert_card)
+
+        // Initialize Navigation Bar
         NavigationBar(this)
 
+        // Store car and bubble into variables
         val car = findViewById<ImageView>(R.id.car)
         val bubble = findViewById<ImageView>(R.id.bubble_three)
 
+        // Apply animation
         startCarAnimation(car, bubble)
-
-        // Get the root view of the activity's layout
-        val rootView: View = findViewById(android.R.id.content)
 
         // Start the EMV transaction process
         startEMVTransaction()
@@ -121,7 +129,7 @@ class InsertCardActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        //When the activity is resume, start the transaction again
+        //When the activity is resumed, start the transaction again
         startEMVTransaction()
     }
 
@@ -131,12 +139,14 @@ class InsertCardActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val TAG = "InsertCardActivity"
+        private const val TAG = "InsertCardActivity" // Log tag
     }
 
+    // Starts the car animation following a circular path around the bubble
     private fun startCarAnimation(car: ImageView, bubble: ImageView) {
         car.post {
 
+            // Calculate the center and radius of the bubble for animation
             val bubbleCenterX = bubble.x + (bubble.width / 4)
             val bubbleCenterY = bubble.y + (bubble.height / 4)
             val bubbleRadius = bubble.width / 2
@@ -145,7 +155,7 @@ class InsertCardActivity : AppCompatActivity() {
             car.x = bubbleCenterX - (car.width / 2)
             car.y = bubbleCenterY - bubbleRadius - (car.height / 2)
 
-            // Define a quarter-circle path (4th quadrant)
+            // Define a quarter-circle path (4th quadrant) for the car's movement
             val path = Path().apply {
                 moveTo(car.x + (car.width / 2), car.y + (car.height / 2))
                 arcTo(
