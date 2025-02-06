@@ -32,11 +32,8 @@ class MainActivity : AppCompatActivity() {
 
         // Listen for the user's click event
         rootView.setOnClickListener {
-            if (!hasClicked) {
-                hasClicked = true
-                val intent = Intent(this@MainActivity, WashPackageActivity::class.java)
-                startActivity(intent)
-            }
+            val intent = Intent(this@MainActivity, WashPackageActivity::class.java)
+            startActivity(intent)
         }
 
         // Observe connection status
