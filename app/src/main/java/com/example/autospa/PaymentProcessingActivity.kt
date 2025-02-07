@@ -26,6 +26,7 @@ class PaymentProcessingActivity : AppCompatActivity() {
             val intent = Intent(this, PaymentSuccessActivity::class.java)
             val options = ActivityOptions.makeCustomAnimation(this, R.anim.fade_in, R.anim.fade_out)
             startActivity(intent, options.toBundle())
+            finish()
         }, 5000)
 
 
